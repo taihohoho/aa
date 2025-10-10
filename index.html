@@ -68,6 +68,95 @@
                 position: absolute;
                 text-align: center;
             }
+/* Thêm vào thẻ <style> hiện tại */
+
+/* Ẩn/Hiện */
+.hidden {
+    display: none !important;
+}
+
+/* Container chính của Carousel */
+#image-carousel-container {
+    position: fixed; /* Giữ nó nằm trên các thành phần khác */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Sử dụng màu nền tối mờ để làm nổi bật ảnh, vẫn giữ được phông nền gradient */
+    background: rgba(0, 0, 0, 0.8); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Đảm bảo nó nằm trên tất cả các lớp khác */
+}
+
+.carousel-wrapper {
+    position: relative;
+    width: 80%; /* Chiều rộng của carousel */
+    max-width: 900px; /* Giới hạn kích thước tối đa */
+    height: 80vh; /* Chiều cao dựa trên viewport */
+    overflow: hidden; /* Quan trọng để chỉ hiển thị một ảnh mỗi lần */
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
+}
+
+.carousel {
+    display: flex; /* Quan trọng để các ảnh nằm trên một hàng ngang */
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out; /* Tạo hiệu ứng cuộn mượt mà */
+}
+
+.carousel-item {
+    min-width: 100%; /* Đảm bảo mỗi ảnh chiếm trọn chiều rộng của wrapper */
+    height: 100%;
+    object-fit: contain; /* Giữ tỷ lệ ảnh và hiển thị toàn bộ trong khung */
+    user-select: none; /* Không cho phép chọn ảnh */
+}
+
+/* Nút chuyển ảnh */
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10;
+    transition: background 0.3s;
+    border-radius: 5px;
+}
+
+.nav-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+/* Nút Đóng */
+#close-carousel-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50%;
+    z-index: 11;
+}
             .text {
                 position: fixed;
                 bottom: 20px;
@@ -87,12 +176,31 @@
     </head>
     
     <body>
-    <div class="cs">
+     <div class="cs">
         <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760095964/anhdayne.jpg" id="logo">
     </div>
+
+    <div id="image-carousel-container" class="hidden">
+        <div class="carousel-wrapper">
+            <button id="close-carousel-button">X</button>
+            
+            <div class="carousel">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760099997/1.jpg" class="carousel-item" alt="Ảnh 1">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760099998/2.jpg" class="carousel-item" alt="Ảnh 2">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760099998/3.jpg" class="carousel-item" alt="Ảnh 3">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760099998/4.jpg" class="carousel-item" alt="Ảnh 4">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760099999/6.jpg" class="carousel-item" alt="Ảnh 6">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760100000/7.jpg" class="carousel-item" alt="Ảnh 7">
+                </div>
+            
+            <button class="nav-button prev-button">❮</button>
+            <button class="nav-button next-button">❯</button>
+        </div>
+    </div>
+
     <canvas class="canvas" width="1820" height="905"></canvas>
     <p class="text" style="color: #ed3073;">Anh Tài nek...vậy là đã được
-    <span id="span_dt_dt"></span><br> gặp nhau rùi đấy😘
+        <span id="span_dt_dt"></span><br> gặp nhau rùi đấy😘 Nhớ ấn vào ảnh nhé 🥰
     </p>
     <script language="javascript">
         function show_date_time() {
@@ -119,7 +227,7 @@
             init: function () {
                 S.Drawing.init('.canvas');
                 document.body.classList.add('body--ready');
-                S.UI.simulate("Hếlo |Thảo Nhee|Chúc mừng|Sinh nhật|Hehehe|#countdown 3|Chúc em |Sinh nhật|Vui vẻ|Luôn luôn|Xinh |đẹp|Luôn luôn| May mắn |❤️|Tuổi mới|nhớ|cố gắng|hơn nữa|nhé|❤️|❤️|🎉|THẢO NHI");
+                S.UI.simulate("Hếlo |Thảo Nhee|Chúc mừng|Sinh nhật|Hehehe|#countdown 3|Chúc em |Sinh nhật|Vui vẻ|Luôn luôn|Xinh đẹp|Học giỏi|Luôn luôn| May mắn |❤️|Tuổi mới|nhớ|cố gắng|hơn nữa|nhé|❤️|❤️|🎉|THẢO❤️NHI");
                 S.Drawing.loop(function () {
                     S.Shape.render();
                 });
@@ -571,6 +679,60 @@
             };
         }());
         S.init();
+    </script>
+<script>
+        // Đặt đoạn JavaScript mới (đã được tạo ở trên) vào đây
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const logoButton = document.getElementById('logo');
+            const carouselContainer = document.getElementById('image-carousel-container');
+            const closeButton = document.getElementById('close-carousel-button');
+            const carousel = document.querySelector('.carousel');
+            const prevButton = document.querySelector('.prev-button');
+            const nextButton = document.querySelector('.next-button');
+            const items = document.querySelectorAll('.carousel-item');
+
+            let currentIndex = 0;
+            const totalItems = items.length;
+
+            // --- CHỨC NĂNG MỞ/ĐÓNG CAROUSEL ---
+
+            // 1. Mở Carousel khi click vào logo
+            logoButton.addEventListener('click', () => {
+                carouselContainer.classList.remove('hidden');
+                // Vô hiệu hóa tính năng xoay của logo khi carousel mở
+                logoButton.style.pointerEvents = 'none'; 
+            });
+
+            // 2. Đóng Carousel
+            closeButton.addEventListener('click', () => {
+                carouselContainer.classList.add('hidden');
+                // Kích hoạt lại tính năng xoay của logo
+                logoButton.style.pointerEvents = 'auto'; 
+            });
+
+            // --- CHỨC NĂNG CUỘN VÒNG LẶP ---
+
+            function updateCarousel() {
+                // Tính toán vị trí dịch chuyển (100% cho mỗi ảnh)
+                const offset = -currentIndex * 100; 
+                carousel.style.transform = `translateX(${offset}%)`;
+            }
+
+            // Nút Tiếp theo
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % totalItems; // Vòng lặp: 0 -> 1 -> 2 -> 0 -> ...
+                updateCarousel();
+            });
+
+            // Nút Quay lại
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + totalItems) % totalItems; // Vòng lặp: 0 -> 2 -> 1 -> 0 -> ...
+                updateCarousel();
+            });
+
+            // Đảm bảo ảnh đầu tiên được hiển thị khi mở
+            updateCarousel(); 
+        });
     </script>
     <dev>
         <audio autoplay>
