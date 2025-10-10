@@ -176,6 +176,21 @@
     </head>
     
     <body>
+   <audio id="bgm" src="https://res.cloudinary.com/dffcer8gc/video/upload/v1760101706/snh22_cx94t6.mp3" preload="auto"></audio>
+
+<button id="playBtn" 
+  style="position: fixed; top: 25%; right: 50%; transform: translateX(-100%); padding: 10px 20px; z-index: 9999;">
+  Bật nhạc lên nha 🎶
+</button>
+<script>
+  const btn = document.getElementById("playBtn");
+  const audio = document.getElementById("bgm");
+  btn.addEventListener("click", () => {
+    audio.play();
+    btn.style.display = "none"; // ẩn nút sau khi bật nhạc
+  });
+</script>
+
      <div class="cs">
         <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760095964/anhdayne.jpg" id="logo">
     </div>
@@ -227,7 +242,7 @@
             init: function () {
                 S.Drawing.init('.canvas');
                 document.body.classList.add('body--ready');
-                S.UI.simulate("Hếlo |Thảo Nhee|Chúc mừng|Sinh nhật|Hehehe|#countdown 3|Chúc em |Sinh nhật|Vui vẻ|Luôn luôn|Xinh đẹp|Học giỏi|Luôn luôn| May mắn |❤️|Tuổi mới|nhớ|cố gắng|hơn nữa|nhé|❤️|❤️|🎉|THẢO❤️NHI");
+                S.UI.simulate("Hếllo |Thảo Nhee|Chúc mừng|Sinh nhật|em nha|🎉|Hehehe|#countdown 3|Chúc em |Sinh nhật|Vui vẻ|Luôn luôn|Xinh đẹp|Học giỏi|Luôn luôn| May mắn |❤️|Tuổi mới|nhớ|cố gắng|hơn nữa|nhé|❤️|Zậy là|Anh đã |biết đến|em |được|1 năm rưỡi|rồi đó|Lần đầu|tiên|biết em|là lúc|em cos|Yaoyao đó|🙌|Vừa|nhảy đẹp|học giỏi|lễ phép|dễ thương|nên|trở thành|Fan|lúc nào|không hay| luôn|Mong rằng|em sẽ|luôn|có được|những thứ|tốt đẹp|nhất|🎉|THẢO❤️NHI");
                 S.Drawing.loop(function () {
                     S.Shape.render();
                 });
@@ -735,8 +750,8 @@
         });
     </script>
     <dev>
-        <audio autoplay>
-            <source src="https://play.imusicvn.com/stream/Mgbb1byycZvy" type="audio/mpeg">
+        <audio autoplay muted>
+            <source src="https://res.cloudinary.com/dffcer8gc/video/upload/v1760101706/snh22_cx94t6.mp3" type="audio/mpeg">
         </audio>
     </dev>
 
