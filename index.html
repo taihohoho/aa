@@ -1,11 +1,11 @@
 <html>
     <head>
-        <title>Cái này dành cho Nhi nè </title>
-        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Danh cho Thao Nhi</title>
         <link rel="Shortcut Icon" href="https://i.pinimg.com/236x/a5/20/de/a520deb545fea9b62776e6bea5d77928.jpg" type="image/x-icon" />
-        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <!--<meta itemprop="image" content="./images/fenxiang.png" />-->
         <style>
             html {
                 height: 100%;
@@ -13,7 +13,6 @@
             body {
                 font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
                 background: #79a8ae;
-                /* Màu chữ mặc định */
                 color: #CFEBE4;
                 font-size: 18px;
                 line-height: 2;
@@ -23,14 +22,13 @@
             a {
                 color: #ebf7f4;
             }
-            /* 📝 CHỈNH SỬA 3: Thay đổi màu nền Gradient của trang */
-            /* Chỉnh sửa các giá trị màu RGB tại đây để thay đổi background chuyển màu */
             .body--ready {
-                 background: -webkit-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
+                background: -webkit-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
                 background: -moz-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
                 background: -o-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
                 background: -ms-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
-                background: linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);            }
+                background: linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
+            }
             .text {
                 position: fixed;
                 bottom: 100px;
@@ -41,13 +39,12 @@
                 margin: 0 auto;
                 display: block;
             }
-            /* 📝 CHỈNH SỬA 4: Kiểu dáng Logo/Ảnh đại diện */
             img#logo {
                 width: 128px;
                 background-size: cover;
                 border-radius: 200px;
-                box-shadow: 0px 0px 40px rgba(255, 99, 71, 0.72); /* Màu bóng */
-                border: 3px solid #ff6347; /* Màu viền */
+                box-shadow: 0px 0px 40px rgba(63, 81, 181, 0.72);
+                border: 3px solid #00a0ff;
                 opacity: 1;
                 margin: 0 auto;
                 margin-top: 20px;
@@ -55,13 +52,13 @@
                 transition: all 1.0s;
             }
             #logo:hover {
-                box-shadow: 0 0 25px #fff; /* Bóng trắng khi rê chuột */
-                -webkit-box-shadow: 0 0 25px #fff;
-                transform: rotate(360deg); /* Hiệu ứng xoay */
-                -ms-transform: rotate(360deg);
-                -moz-transform: rotate(360deg);
-                -webkit-transform: rotate(360deg);
-                -o-transform: rotate(360deg);
+                box-shadow: 0 0 10px #fff;
+                -webkit-box-shadow: 0 0 19px #fff;
+                transform: rotate(360deg);
+                -ms-transform: rotate(360deg); /* IE 9 */
+                -moz-transform: rotate(360deg); /* Firefox */
+                -webkit-transform: rotate(360deg); /* Safari 和 Chrome */
+                -o-transform: rotate(360deg); /* Opera */
                 filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
             }
             .cs {
@@ -91,24 +88,16 @@
     
     <body>
     <div class="cs">
-        <img src="https://1.bp.blogspot.com/-ciJx92ftXls/YGLZXgbmRgI/AAAAAAAArCg/iA9A_uU0qewj8ZgCpv6mCRqNuvo2YlZZACNcBGAsYHQ/s0/1d83a6d88d8be5b041a9a98fd5048311.jpeg" id="logo">
+        <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760095964/anhdayne.jpg" id="logo">
     </div>
     <canvas class="canvas" width="1820" height="905"></canvas>
-    
-    <p class="text" style="color: #ff1493;">
-        Chúng ta đã gặp nhau được
-        <span id="span_dt_dt"></span><br> 
-        rồi đấy, quý em lắm đó! ❤️
+    <p class="text" style="color: #ed3073;">Anh Tài nek...vậy là đã được
+    <span id="span_dt_dt"></span><br> gặp nhau rùi đấy😘
     </p>
-    
     <script language="javascript">
         function show_date_time() {
             window.setTimeout("show_date_time()", 1000);
-            
-            // 📝 CHỈNH SỬA 7: Ngày giờ bắt đầu tính (MONTH/DAY/YEAR HOUR:MINUTE:SECOND)
-            // Ví dụ: 04/03/2024 08:30:00 (ngày 3 tháng 4 năm 2024 lúc 8 giờ 30 phút sáng)
             BirthDay = new Date("02/03/2025 18:00:00");
-            
             today = new Date();
             timeold = (today.getTime() - BirthDay.getTime());
             sectimeold = timeold / 1000
@@ -121,8 +110,6 @@
             e_minsold = (e_hrsold - hrsold) * 60;
             minsold = Math.floor((e_hrsold - hrsold) * 60);
             seconds = Math.floor((e_minsold - minsold) * 60);
-            
-            // 📝 CHỈNH SỬA 8: Định dạng hiển thị thời gian
             span_dt_dt.innerHTML = daysold + " Ngày " + hrsold + " Giờ " + minsold + " Phút " + seconds + " Giây ";
         }
         show_date_time();
@@ -132,11 +119,7 @@
             init: function () {
                 S.Drawing.init('.canvas');
                 document.body.classList.add('body--ready');
-                
-                // 📝 CHỈNH SỬA 9: Chuỗi thông điệp chữ động (Ngăn cách bởi '|')
-                // #countdown 3: đếm ngược từ 3; #time: hiển thị giờ hiện tại
-                S.UI.simulate("Hếlo| Thảo| Nhee|Chúc|mừng|Sinh|nhật|Hehehe|#countdown 3|Chúc| em |Sinh| nhật|Vui| vẻ|Luôn| luôn|Xinh |đẹp|Luôn| luôn| May| mắn |❤️|Tuổi|mới|nhớ|cố|gắng|hơn|nữa|nhé|❤️|❤️|🎉|#time");
-                
+                S.UI.simulate("Hếlo |Thảo Nhee|Chúc mừng|Sinh nhật|Hehehe|#countdown 3|Chúc em |Sinh nhật|Vui vẻ|Luôn luôn|Xinh |đẹp|Luôn luôn| May mắn |❤️|Tuổi mới|nhớ|cố gắng|hơn nữa|nhé|❤️|❤️|🎉|THẢO NHI");
                 S.Drawing.loop(function () {
                     S.Shape.render();
                 });
@@ -590,11 +573,10 @@
         S.init();
     </script>
     <dev>
-        <audio autoplay loop>
+        <audio autoplay>
             <source src="https://play.imusicvn.com/stream/Mgbb1byycZvy" type="audio/mpeg">
         </audio>
     </dev>
 
 </body>
-
 </html>
