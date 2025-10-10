@@ -1,12 +1,20 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Dành cho Thảo Nhi</title>
+        <title>Danh cho Thao Nhi</title>
         <link rel="Shortcut Icon" href="https://i.pinimg.com/236x/a5/20/de/a520deb545fea9b62776e6bea5d77928.jpg" type="image/x-icon" />
    
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <!--<meta itemprop="image" content="./images/fenxiang.png" />-->
         <style>
+        @keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
             html {
                 height: 100%;
             }
@@ -50,17 +58,12 @@
                 margin-top: 20px;
                 margin-bottom: 20px;
                 transition: all 1.0s;
+                animation: spin 8s linear infinite; /* <-- THÊM DÒNG NÀY */
             }
             #logo:hover {
                 box-shadow: 0 0 10px #fff;
                 -webkit-box-shadow: 0 0 19px #fff;
-                transform: rotate(360deg);
-                -ms-transform: rotate(360deg); /* IE 9 */
-                -moz-transform: rotate(360deg); /* Firefox */
-                -webkit-transform: rotate(360deg); /* Safari 和 Chrome */
-                -o-transform: rotate(360deg); /* Opera */
-                filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-            }
+                           }
             .cs {
                 width: 100%;
                 height: 100%;
@@ -757,4 +760,3 @@
 
 </body>
 </html>
-
