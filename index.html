@@ -3,7 +3,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Danh cho Thao Nhi</title>
         <link rel="Shortcut Icon" href="https://i.pinimg.com/236x/a5/20/de/a520deb545fea9b62776e6bea5d77928.jpg" type="image/x-icon" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <!--<meta itemprop="image" content="./images/fenxiang.png" />-->
         <style>
@@ -276,7 +276,7 @@
                     requestFrame.call(window, this.loop.bind(this));
                 },
                 adjustCanvas: function () {
-                    canvas.width = window.innerWidth - 100;
+                    canvas.width = window.innerWidth;
                     canvas.height = window.innerHeight - 30;
                 },
                 clearFrame: function () {
@@ -407,13 +407,13 @@
             }
         };
         S.Dot = function (x, y) {
-            this.p = new S.Point({
-                x: x,
-                y: y,
-                z: 5,
-                a: 1,
-                h: 0
-            });
+    this.p = new S.Point({
+        x: x,
+        y: y,
+        z: (window.innerWidth < 768) ? 2.5 : 5,
+        a: 1,
+        h: 0
+    });
             this.e = 0.07;
             this.s = true;
             this.c = new S.Color(255, 255, 255, this.p.a);
@@ -499,8 +499,8 @@
                 this._draw();
             }
         };
-        S.ShapeBuilder = (function () {
-            var gap = 13,
+       S.ShapeBuilder = (function () {
+    var gap = (window.innerWidth < 768) ? 7 : 13,
                 shapeCanvas = document.createElement('canvas'),
                 shapeContext = shapeCanvas.getContext('2d'),
                 fontSize = 500,
@@ -646,7 +646,7 @@
                         dots[d].e = fast ? 0.25 : (dots[d].s ? 0.14 : 0.11);
                         if (dots[d].s) {
                             dots[d].move(new S.Point({
-                                z: Math.random() * 20 + 10,
+                                z: (window.innerWidth < 768) ? (Math.random() * 10 + 5) : (Math.random() * 20 + 10),
                                 a: Math.random(),
                                 h: 18
                             }));
@@ -661,7 +661,7 @@
                             x: n.dots[i].x + cx,
                             y: n.dots[i].y + cy,
                             a: 1,
-                            z: 5,
+                            z: (window.innerWidth < 768) ? 3 : 5,
                             h: 0
                         }));
                         n.dots = n.dots.slice(0, i).concat(n.dots.slice(i + 1));
@@ -670,7 +670,7 @@
                     for (var i = d; i < dots.length; i++) {
                         if (dots[i].s) {
                             dots[i].move(new S.Point({
-                                z: Math.random() * 20 + 10,
+                                z: (window.innerWidth < 768) ? (Math.random() * 10 + 5) : (Math.random() * 20 + 10),
                                 a: Math.random(),
                                 h: 20
                             }));
@@ -680,7 +680,7 @@
                                 x: Math.random() * a.w,
                                 y: Math.random() * a.h,
                                 a: 0.3, //.4
-                                z: Math.random() * 4,
+                                z: (window.innerWidth < 768) ? (Math.random() * 2) : (Math.random() * 4),
                                 h: 0
                             }));
                         }
