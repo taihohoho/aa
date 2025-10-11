@@ -6,6 +6,9 @@
    
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <!--<meta itemprop="image" content="./images/fenxiang.png" />-->
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap" rel="stylesheet">
         <style>
                    html {
                 height: 100%;
@@ -57,6 +60,21 @@
     transform: scale(1.15); /* Phóng to logo lên 115% */
     cursor: pointer;
     box-shadow: 0 0 15px #fff, 0 0 30px #a7e0ff;
+}
+/* ================================================= */
+/* CODE ĐIỀU CHỈNH CỠ CHỮ THEO MÀN HÌNH    */
+/* ================================================= */
+
+/* 1. Đặt cỡ chữ mặc định (áp dụng cho điện thoại) */
+.text {
+    font-size: 16px; 
+}
+
+/* 2. Đặt cỡ chữ lớn hơn KHI màn hình rộng từ 768px trở lên (máy tính) */
+@media (min-width: 768px) {
+    .text {
+        font-size: 22px; /* <-- Cỡ chữ cho máy tính, bạn có thể thay đổi số này */
+    }
 }
             a {
                 color: #ebf7f4;
@@ -180,6 +198,7 @@
                 text-align: center;
                 width: 100%;
                 font-weight: bold;
+                font-family: "Grape Nuts", cursive;
             }
             .text-right {
                 position: fixed;
@@ -261,7 +280,7 @@
     </div>
 
     <canvas class="canvas" width="1820" height="905"></canvas>
-    <p class="text" style="color: #ed3073;">Anh Tài nek...vậy là đã được
+    <p class="text" style="color: #9370DB;">Anh Tài nek...vậy là đã được
         <span id="span_dt_dt"></span><br> gặp nhau rùi đấy😘 Nhớ ấn vào ảnh nhé 🥰
     </p>
     <script language="javascript">
