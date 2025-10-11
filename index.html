@@ -206,9 +206,38 @@
                 <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760099997/1.jpg" class="carousel-item" alt="Ảnh 1">
                 <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760099998/2.jpg" class="carousel-item" alt="Ảnh 2">
                 <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760099998/3.jpg" class="carousel-item" alt="Ảnh 3">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760099999/5.jpg" class="carousel-item" alt="Ảnh 5">
                 <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760099998/4.jpg" class="carousel-item" alt="Ảnh 4">
                 <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760099999/6.jpg" class="carousel-item" alt="Ảnh 6">
                 <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760100000/7.jpg" class="carousel-item" alt="Ảnh 7">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760155664/8.jpg" class="carousel-item" alt="Ảnh 8">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760155664/9.jpg" class="carousel-item" alt="Ảnh 9">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760155665/10.jpg" class="carousel-item" alt="Ảnh 10">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158126/450467101_406292565780348_85A1134598449927289177_n_q1vgut.jpg" class="carousel-item" alt="Ảnh 11">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158126/12.jpg" class="carousel-item" alt="Ảnh 12">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158126/13.jpg" class="carousel-item" alt="Ảnh 13">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158127/14.jpg" class="carousel-item" alt="Ảnh 14">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158128/15.jpg" class="carousel-item" alt="Ảnh 15">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158130/16.jpg" class="carousel-item" alt="Ảnh 16">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158129/17.jpg" class="carousel-item" alt="Ảnh 17">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158130/18.jpg" class="carousel-item" alt="Ảnh 18">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158130/19.jpg" class="carousel-item" alt="Ảnh 19">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158132/20.jpg" class="carousel-item" alt="Ảnh 20">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158132/21.jpg" class="carousel-item" alt="Ảnh 21">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158132/22.jpg" class="carousel-item" alt="Ảnh 22">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158133/23.jpg" class="carousel-item" alt="Ảnh 23">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158133/24.jpg" class="carousel-item" alt="Ảnh 24">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158136/25.jpg" class="carousel-item" alt="Ảnh 25">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158136/26.jpg" class="carousel-item" alt="Ảnh 26">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158141/27.jpg" class="carousel-item" alt="Ảnh 27">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158146/28.jpg" class="carousel-item" alt="Ảnh 28">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158161/29.jpg" class="carousel-item" alt="Ảnh 29">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158168/30.jpg" class="carousel-item" alt="Ảnh 30">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158179/31.jpg" class="carousel-item" alt="Ảnh 31">
+                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158837/33.jpg" class="carousel-item" alt="Ảnh 32">
+                <video class="carousel-item" controls>
+        <source src="https://res.cloudinary.com/dffcer8gc/video/upload/v1760158187/31.mp4" type="video/mp4">
+    </video>
                 </div>
             
             <button class="nav-button prev-button">❮</button>
@@ -708,6 +737,41 @@
             const prevButton = document.querySelector('.prev-button');
             const nextButton = document.querySelector('.next-button');
             const items = document.querySelectorAll('.carousel-item');
+         // --- TỰ ĐỘNG DỪNG NHẠC NỀN KHI VIDEO PHÁT ---
+
+const backgroundMusic = document.getElementById('bgm');
+const videosInCarousel = document.querySelectorAll('.carousel video');
+
+// Hàm kiểm tra xem có video nào đang phát không
+const isAnyVideoPlaying = () => {
+    let isPlaying = false;
+    videosInCarousel.forEach(video => {
+        if (!video.paused) {
+            isPlaying = true;
+        }
+    });
+    return isPlaying;
+};
+
+videosInCarousel.forEach(video => {
+    // Khi video bắt đầu phát -> Dừng nhạc nền
+    video.addEventListener('play', () => {
+        backgroundMusic.pause();
+    });
+
+    // Khi video dừng hoặc kết thúc -> Kiểm tra và bật lại nhạc nền
+    video.addEventListener('pause', () => {
+        if (!isAnyVideoPlaying()) {
+            backgroundMusic.play();
+        }
+    });
+    
+    video.addEventListener('ended', () => {
+        if (!isAnyVideoPlaying()) {
+            backgroundMusic.play();
+        }
+    });
+});
 
             let currentIndex = 0;
             const totalItems = items.length;
