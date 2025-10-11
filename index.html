@@ -3,9 +3,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Danh cho Thao Nhi</title>
         <link rel="Shortcut Icon" href="https://i.pinimg.com/236x/a5/20/de/a520deb545fea9b62776e6bea5d77928.jpg" type="image/x-icon" />
-
+   
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <!--<meta itemprop="image" content="./images/fenxiang.png" />-->
+       <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap" rel="stylesheet">
         <style>
@@ -21,7 +22,7 @@
                 letter-spacing: 1.2px;
                 margin: 0;
             }
-
+           
           /* ======================================================== */
 /* CODE CSS CUỐI CÙNG CHO LOGO (DÙNG PHƯƠNG PHÁP BỌC)  */
 /* ======================================================== */
@@ -37,7 +38,7 @@
     width: 128px;
     height: 128px;
     margin: 20px auto; /* Căn giữa */
-
+    
     /* Áp dụng animation xoay tròn liên tục */
     animation: spin 8s linear infinite;
 }
@@ -49,7 +50,7 @@
     border-radius: 50%; /* Bo tròn */
     border: 3px solid #00a0ff;
     box-shadow: 0px 0px 40px rgba(63, 81, 181, 0.72);
-
+    
     /* Thêm hiệu ứng chuyển động mượt mà cho việc phóng to */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
@@ -70,7 +71,7 @@
     color: #FFFFFF; /* <-- Màu trắng */
     font-weight: bold; /* Làm số đậm hơn cho nổi bật */
 }
-    font-size: 21px;
+    font-size: 21px; 
 }
 
 /* 2. Đặt cỡ chữ lớn hơn KHI màn hình rộng từ 768px trở lên (máy tính) */
@@ -118,14 +119,14 @@
     transform: translateX(-50%);
 
     /* 2. Tạo hình dáng cho box */
-    background-color: rgba(0, 0, 0, 0.05);
-
+    background-color: rgba(0, 0, 0, 0.05); 
+    
     /* GIẢM KHOẢNG ĐỆM NGANG Ở ĐÂY */
     padding: 12px 18px; /* Thử giảm xuống còn 18px trái/phải */
-
-    border-radius: 15px;
-    width: fit-content;
-    max-width: 90%;
+                       
+    border-radius: 15px;                  
+    width: fit-content; 
+    max-width: 90%;                       
 
     /* 3. Định dạng cho chữ bên trong */
     text-align: center;
@@ -146,7 +147,7 @@
     width: 100%;
     height: 100%;
     /* Sử dụng màu nền tối mờ để làm nổi bật ảnh, vẫn giữ được phông nền gradient */
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.8); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -235,148 +236,14 @@
                 width: 100%;
                 font-weight: bold;
             }
-
-            /* === MINI GAME STYLES START === */
-            #miniGameBtn {
-                position: fixed;
-                top: 20px;
-                left: 20px;
-                padding: 10px 15px;
-                font-size: 16px;
-                font-weight: bold;
-                background-color: #ff8c00;
-                color: white;
-                border: none;
-                border-radius: 10px;
-                cursor: pointer;
-                z-index: 1001;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-                transition: transform 0.2s;
-                
-            }
-            #miniGameBtn:hover {
-                transform: scale(1.1);
-            }
-
-            .game-overlay {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.85);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                z-index: 10002;
-            }
-            
-            #game-menu {
-                background: linear-gradient(145deg, #4a4e69, #2b2d42);
-                padding: 40px;
-                border-radius: 20px;
-                text-align: center;
-                box-shadow: 0 0 30px rgba(255,255,255,0.3);
-                border: 2px solid #fff;
-            }
-            
-            #game-menu h2 {
-                color: #fff;
-                margin-top: 0;
-                font-family: "Grape Nuts", cursive;
-                font-size: 2.5em;
-            }
-
-            #game-menu .game-choice-btn {
-                display: block;
-                width: 250px;
-                padding: 15px;
-                margin: 15px 0;
-                font-size: 18px;
-                font-weight: bold;
-                cursor: pointer;
-                border-radius: 10px;
-                border: 2px solid;
-                transition: all 0.3s;
-            }
-            
-            #start-heart-catcher {
-                background-color: #ff6b6b;
-                border-color: #ff8a8a;
-                color: #fff;
-            }
-            #start-heart-catcher:hover {
-                 background-color: #ff8a8a;
-                 border-color: #ff6b6b;
-            }
-            
-            #start-flappy-bird {
-                background-color: #48dbfb;
-                border-color: #7ce5fc;
-                color: #fff;
-            }
-             #start-flappy-bird:hover {
-                 background-color: #7ce5fc;
-                 border-color: #48dbfb;
-            }
-
-            .close-game-btn {
-                position: absolute;
-                top: 15px;
-                right: 15px;
-                background: #ff4d4d;
-                color: white;
-                border: none;
-                width: 35px;
-                height: 35px;
-                text-align: center;
-                line-height: 35px;
-                font-size: 20px;
-                font-weight: bold;
-                border-radius: 50%;
-                cursor: pointer;
-            }
-            
-            .game-container {
-                position: relative; /* For close button positioning */
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .game-canvas {
-                background: #fff;
-                border-radius: 10px;
-                box-shadow: 0 0 20px rgba(255,255,255,0.5);
-            }
-            
-            .game-info {
-                color: #fff;
-                font-size: 24px;
-                font-weight: bold;
-                margin-top: 15px;
-            }
-            
-            .back-to-menu-btn {
-                margin-top: 20px;
-                padding: 10px 20px;
-                background-color: #f7b731;
-                color: #fff;
-                border: none;
-                border-radius: 8px;
-                cursor: pointer;
-                font-weight: bold;
-            }
-            /* === MINI GAME STYLES END === */
-
         </style>
-
+    
     </head>
-
+    
     <body>
-   <audio id="bgm" src="https://res.cloudinary.com/dffcer8gc/video/upload/v1760101706/snh22_cx94t6.mp3" preload="auto" loop></audio>
+   <audio id="bgm" src="https://res.cloudinary.com/dffcer8gc/video/upload/v1760101706/snh22_cx94t6.mp3" preload="auto"></audio>
 
-<button id="playBtn"
+<button id="playBtn" 
   style="position: fixed; top: 25%; right: 50%; transform: translateX(50%); padding: 10px 20px; z-index: 9999;">
   Bật nhạc lên nha Nhee ơi 🎶
 </button>
@@ -397,7 +264,7 @@
     <div id="image-carousel-container" class="hidden">
         <div class="carousel-wrapper">
             <button id="close-carousel-button">X</button>
-
+            
             <div class="carousel">
                 <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760099997/1.jpg" class="carousel-item" alt="Ảnh 1">
                 <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760099998/2.jpg" class="carousel-item" alt="Ảnh 2">
@@ -435,43 +302,12 @@
         <source src="https://res.cloudinary.com/dffcer8gc/video/upload/v1760158187/31.mp4" type="video/mp4">
     </video>
                 </div>
-
+            
             <button class="nav-button prev-button">❮</button>
             <button class="nav-button next-button">❯</button>
         </div>
     </div>
-    
-    <button id="miniGameBtn">🎮 Mini Games</button>
 
-    <div id="game-menu-container" class="game-overlay hidden">
-        <div id="game-menu">
-            <button id="close-game-menu" class="close-game-btn">X</button>
-            <h2>Mini Games</h2>
-            <button id="start-heart-catcher" class="game-choice-btn">❤️ Heart Catcher ❤️</button>
-            <button id="start-flappy-bird" class="game-choice-btn">🐦 Flappy Bird 🐦</button>
-        </div>
-    </div>
-    
-    <div id="heart-catcher-container" class="game-overlay hidden">
-        <div class="game-container">
-            <button class="close-game-btn heart-catcher-close">X</button>
-            <canvas id="heartCatcherCanvas" class="game-canvas"></canvas>
-            <div id="heart-catcher-score" class="game-info">Score: 0</div>
-            <div id="heart-catcher-timer" class="game-info" style="font-size: 18px; margin-top: 5px;">Thời gian: 60</div>
-            <div id="heart-catcher-highscore" class="game-info" style="font-size: 18px; margin-top: 5px;">Cao nhất: 0</div>
-            <button class="back-to-menu-btn">Back to Menu</button>
-        </div>
-    </div>
-
-    <div id="flappy-bird-container" class="game-overlay hidden">
-        <div class="game-container">
-            <button class="close-game-btn flappy-bird-close">X</button>
-            <canvas id="flappyBirdCanvas" class="game-canvas"></canvas>
-            <div id="flappy-bird-score" class="game-info">Score: 0</div>
-            <div id="flappy-bird-highscore" class="game-info" style="font-size: 18px; margin-top: 5px;">Cao nhất: 0</div>
-            <button class="back-to-menu-btn">Back to Menu</button>
-        </div>
-    </div>
     <canvas class="canvas" width="1820" height="905"></canvas>
     <p class="text" style="color: #FFA500;">Anh Tài nek...vậy là đã được
         <span id="span_dt_dt"></span><br> gặp nhau rùi đấy😘 Nhớ ấn vào ảnh nhé 🥰
@@ -999,7 +835,7 @@ videosInCarousel.forEach(video => {
             backgroundMusic.play();
         }
     });
-
+    
     video.addEventListener('ended', () => {
         if (!isAnyVideoPlaying()) {
             backgroundMusic.play();
@@ -1016,7 +852,7 @@ videosInCarousel.forEach(video => {
             logoButton.addEventListener('click', () => {
                 carouselContainer.classList.remove('hidden');
                 // Vô hiệu hóa tính năng xoay của logo khi carousel mở
-                logoButton.style.pointerEvents = 'none';
+                logoButton.style.pointerEvents = 'none'; 
             });
 
             // 2. Đóng Carousel
@@ -1025,14 +861,14 @@ videosInCarousel.forEach(video => {
                  backgroundMusic.play(); // <-- THÊM DÒNG NÀY ĐỂ BẬT LẠI NHẠC NỀN
                 carouselContainer.classList.add('hidden');
                 // Kích hoạt lại tính năng xoay của logo
-                logoButton.style.pointerEvents = 'auto';
+                logoButton.style.pointerEvents = 'auto'; 
             });
 
             // --- CHỨC NĂNG CUỘN VÒNG LẶP ---
 
             function updateCarousel() {
                 // Tính toán vị trí dịch chuyển (100% cho mỗi ảnh)
-                const offset = -currentIndex * 100;
+                const offset = -currentIndex * 100; 
                 carousel.style.transform = `translateX(${offset}%)`;
             }
 
@@ -1053,347 +889,10 @@ videosInCarousel.forEach(video => {
             });
 
             // Đảm bảo ảnh đầu tiên được hiển thị khi mở
-            updateCarousel();
+            updateCarousel(); 
         });
-</script>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const bgm = document.getElementById('bgm');
-    
-
-    const miniGameBtn = document.getElementById('miniGameBtn');
-    const gameMenuContainer = document.getElementById('game-menu-container');
-    const closeGameMenuBtn = document.getElementById('close-game-menu');
-
-    const startHeartCatcherBtn = document.getElementById('start-heart-catcher');
-    const heartCatcherContainer = document.getElementById('heart-catcher-container');
-    
-    const startFlappyBirdBtn = document.getElementById('start-flappy-bird');
-    const flappyBirdContainer = document.getElementById('flappy-bird-container');
-
-    let heartCatcherInterval;
-    let flappyBirdInterval;
-
-    // --- Menu Controls ---
-    const openGameMenu = () => {
-       
-        gameMenuContainer.classList.remove('hidden');
-    };
-
-    const closeGameMenu = () => {
-       
-        gameMenuContainer.classList.add('hidden');
-    };
-
-    const showGame = (gameContainer) => {
-        gameMenuContainer.classList.add('hidden');
-        gameContainer.classList.remove('hidden');
-    };
-
-    const showMenuFromGame = (gameContainer) => {
-        gameContainer.classList.add('hidden');
-        gameMenuContainer.classList.remove('hidden');
-        // Stop game loops when returning to menu
-        if (heartCatcherInterval) clearInterval(heartCatcherInterval);
-        if (flappyBirdInterval) cancelAnimationFrame(flappyBirdInterval);
-    };
-
-    const closeAllGames = () => {
-       
-        gameMenuContainer.classList.add('hidden');
-        heartCatcherContainer.classList.add('hidden');
-        flappyBirdContainer.classList.add('hidden');
-        if (heartCatcherInterval) clearInterval(heartCatcherInterval);
-        if (flappyBirdInterval) cancelAnimationFrame(flappyBirdInterval);
-    };
-
-    miniGameBtn.addEventListener('click', openGameMenu);
-    closeGameMenuBtn.addEventListener('click', closeGameMenu);
-
-    document.querySelectorAll('.back-to-menu-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const gameContainer = e.target.closest('.game-overlay');
-            showMenuFromGame(gameContainer);
-        });
-    });
-
-    document.querySelectorAll('.close-game-btn').forEach(btn => {
-        btn.addEventListener('click', closeAllGames);
-    });
-
-    startHeartCatcherBtn.addEventListener('click', () => {
-        showGame(heartCatcherContainer);
-        runHeartCatcher();
-    });
-
-    startFlappyBirdBtn.addEventListener('click', () => {
-        showGame(flappyBirdContainer);
-        runFlappyBird();
-    });
-
-    // --- Heart Catcher Game Logic ---
-   function runHeartCatcher() {
-    const canvas = document.getElementById('heartCatcherCanvas');
-    const ctx = canvas.getContext('2d');
-    const scoreEl = document.getElementById('heart-catcher-score');
-    
-    // Lấy các element mới
-    const timerEl = document.getElementById('heart-catcher-timer');
-    const highScoreEl = document.getElementById('heart-catcher-highscore');
-
-    // Lấy điểm cao đã lưu hoặc đặt là 0
-    let highScore = localStorage.getItem('heartCatcherHighScore') || 0;
-    highScoreEl.textContent = 'Cao nhất: ' + highScore;
-    
-    canvas.width = 400;
-    canvas.height = 500;
-
-    let score = 0;
-    let timeLeft = 60; // Thời gian bắt đầu là 60 giây
-    let gameOver = false;
-    const basket = { x: canvas.width / 2 - 35, y: canvas.height - 40, width: 70, height: 20 };
-    const hearts = [];
-    
-    // Dọn dẹp các interval cũ để tránh game chạy ngầm
-    if (window.heartCatcherGameInterval) clearInterval(window.heartCatcherGameInterval);
-    if (window.heartCatcherTimerInterval) clearInterval(window.heartCatcherTimerInterval);
-
-    // --- HÀM ĐẾM NGƯỢC THỜI GIAN ---
-    function countdown() {
-        if (timeLeft <= 0) {
-            clearInterval(window.heartCatcherTimerInterval);
-            gameOver = true;
-            
-            // So sánh và lưu điểm cao
-            if (score > highScore) {
-                highScore = score;
-                localStorage.setItem('heartCatcherHighScore', highScore);
-                highScoreEl.textContent = 'Cao nhất: ' + highScore;
-            }
-            
-            // Hiển thị thông báo hết giờ
-            ctx.fillStyle = 'rgba(0,0,0,0.5)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = 'white';
-            ctx.font = '30px Arial';
-            ctx.textAlign = 'center';
-            ctx.fillText('Hết giờ!', canvas.width / 2, canvas.height / 2);
-            return;
-        }
-        timeLeft--;
-        timerEl.textContent = 'Thời gian: ' + timeLeft;
-    }
-
-    // --- VÒNG LẶP CHÍNH CỦA GAME ---
-    function gameLoop() {
-        if (gameOver) {
-            return; // Dừng vòng lặp khi hết giờ
-        }
-        
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
-        // Vẽ giỏ
-        ctx.fillStyle = '#8B4513';
-        ctx.fillRect(basket.x, basket.y, basket.width, basket.height);
-        
-        // Tạo tim mới ngẫu nhiên
-        if (Math.random() < 0.05) {
-            hearts.push({ x: Math.random() * (canvas.width - 20), y: -20 });
-        }
-        
-        // Cập nhật và vẽ các trái tim
-        hearts.forEach((heart, index) => {
-            heart.y += 3; // Tăng tốc độ rơi của tim một chút cho vui
-            
-            // Vẽ hình trái tim
-            ctx.fillStyle = 'red';
-            ctx.beginPath();
-            ctx.moveTo(heart.x, heart.y + 5);
-            ctx.bezierCurveTo(heart.x, heart.y, heart.x - 10, heart.y, heart.x - 10, heart.y + 5);
-            ctx.bezierCurveTo(heart.x - 10, heart.y + 10, heart.x, heart.y + 15, heart.x, heart.y + 20);
-            ctx.bezierCurveTo(heart.x, heart.y + 15, heart.x + 10, heart.y + 10, heart.x + 10, heart.y + 5);
-            ctx.bezierCurveTo(heart.x + 10, heart.y, heart.x, heart.y, heart.x, heart.y + 5);
-            ctx.fill();
-            
-            // Kiểm tra va chạm
-            if (heart.y > basket.y - 20 && heart.y < basket.y + basket.height && heart.x > basket.x && heart.x < basket.x + basket.width) {
-                hearts.splice(index, 1);
-                score++;
-                scoreEl.textContent = 'Điểm: ' + score;
-            } else if (heart.y > canvas.height) {
-                hearts.splice(index, 1);
-            }
-        });
-    }
-
-    // --- THIẾT LẬP LẠI VÀ BẮT ĐẦU GAME ---
-    function startGame() {
-        // Reset trạng thái game
-        score = 0;
-        timeLeft = 60;
-        gameOver = false;
-        hearts.length = 0; // Xóa hết tim cũ
-        scoreEl.textContent = 'Điểm: 0';
-        timerEl.textContent = 'Thời gian: ' + timeLeft;
-        highScoreEl.textContent = 'Cao nhất: ' + highScore;
-        
-        // Bắt đầu các vòng lặp
-        window.heartCatcherGameInterval = setInterval(gameLoop, 1000 / 60);
-        window.heartCatcherTimerInterval = setInterval(countdown, 1000);
-    }
-
-    // Theo dõi chuyển động chuột để di chuyển giỏ
-    canvas.addEventListener('mousemove', e => {
-        const rect = canvas.getBoundingClientRect();
-        basket.x = e.clientX - rect.left - basket.width / 2;
-        if (basket.x < 0) basket.x = 0;
-        if (basket.x + basket.width > canvas.width) basket.x = canvas.width - basket.width;
-    });
-    
-    startGame(); // Bắt đầu game
-}
-
-    // --- Flappy Bird Game Logic ---
-    function runFlappyBird() {
-    const canvas = document.getElementById('flappyBirdCanvas');
-    const ctx = canvas.getContext('2d');
-    const scoreEl = document.getElementById('flappy-bird-score');
-    
-    // Lấy và hiển thị điểm cao nhất đã lưu
-    const highScoreEl = document.getElementById('flappy-bird-highscore');
-    let highScore = localStorage.getItem('flappyBirdHighScore') || 0;
-    highScoreEl.textContent = 'Cao nhất: ' + highScore;
-
-    canvas.width = 320;
-    canvas.height = 480;
-    
-    let bird = { x: 50, y: 150, width: 20, height: 20 };
-    let gravity = 0.15;      // Trọng lực (giảm để chim rơi chậm hơn)
-    let lift = -3;         // Lực nâng khi nhấn
-    let velocity = 0;
-    let score = 0;
-    let pipes = [];
-    let pipeWidth = 40;
-    let pipeGap = 140;       // Khe hở giữa 2 ống (tăng để dễ hơn)
-    let frameCount = 0;
-    let gameOver = false;
-    let flappyBirdInterval;
-
-    // Hàm xử lý khi game kết thúc
-    function endGame() {
-        if (gameOver) return; // Đảm bảo chỉ chạy 1 lần
-        gameOver = true;
-        
-        // So sánh và lưu điểm cao mới
-        if (score > highScore) {
-            highScore = score;
-            localStorage.setItem('flappyBirdHighScore', highScore);
-            highScoreEl.textContent = 'Cao nhất: ' + highScore;
-        }
-    }
-
-    function resetGame() {
-        bird = { x: 50, y: 150, width: 20, height: 20 };
-        velocity = 0;
-        score = 0;
-        pipes = [];
-        frameCount = 0;
-        gameOver = false;
-        scoreEl.textContent = 'Điểm: 0';
-        highScoreEl.textContent = 'Cao nhất: ' + highScore; // Cập nhật lại highscore
-        
-        if(flappyBirdInterval) cancelAnimationFrame(flappyBirdInterval);
-        gameLoop();
-    }
-
-    function drawBird() {
-        ctx.fillStyle = '#FFD700';
-        ctx.fillRect(bird.x, bird.y, bird.width, bird.height);
-    }
-
-    function drawPipes() {
-        ctx.fillStyle = '#008000';
-        pipes.forEach(pipe => {
-            ctx.fillRect(pipe.x, 0, pipeWidth, pipe.top);
-            ctx.fillRect(pipe.x, canvas.height - pipe.bottom, pipeWidth, pipe.bottom);
-        });
-    }
-    
-    function showGameOver() {
-        ctx.fillStyle = 'rgba(0,0,0,0.5)';
-        ctx.fillRect(0,0,canvas.width, canvas.height);
-        ctx.fillStyle = 'white';
-        ctx.font = '30px Arial';
-        ctx.textAlign = 'center';
-        ctx.fillText('Game Over', canvas.width / 2, canvas.height / 2 - 20);
-        ctx.font = '20px Arial';
-        ctx.fillText('Nhấn để chơi lại', canvas.width / 2, canvas.height / 2 + 20);
-    }
-
-    function gameLoop() {
-        if(gameOver) {
-            showGameOver();
-            return;
-        }
-        
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
-        velocity += gravity;
-        bird.y += velocity;
-        drawBird();
-
-        if (frameCount % 150 === 0) {
-            const topHeight = Math.random() * (canvas.height - pipeGap - 50) + 25;
-            pipes.push({
-                x: canvas.width,
-                top: topHeight,
-                bottom: canvas.height - topHeight - pipeGap,
-                passed: false
-            });
-        }
-
-        pipes.forEach(pipe => {
-            pipe.x -= 1;
-            
-            if(!pipe.passed && pipe.x < bird.x) {
-                score++;
-                pipe.passed = true;
-                scoreEl.textContent = 'Điểm: ' + score;
-            }
-
-            // Va chạm ống
-            if (bird.x < pipe.x + pipeWidth && bird.x + bird.width > pipe.x &&
-               (bird.y < pipe.top || bird.y + bird.height > canvas.height - pipe.bottom)) {
-                endGame(); // Gọi hàm kết thúc
-            }
-        });
-        drawPipes();
-
-        // Va chạm đất/trời
-        if (bird.y + bird.height > canvas.height || bird.y < 0) {
-            endGame(); // Gọi hàm kết thúc
-        }
-
-        frameCount++;
-        flappyBirdInterval = requestAnimationFrame(gameLoop);
-    }
-    
-    function flap() {
-        if(gameOver) {
-            resetGame();
-        } else {
-             velocity = lift;
-        }
-    }
-    
-    canvas.removeEventListener('click', flap); // Xóa listener cũ để tránh lặp
-    canvas.addEventListener('click', flap);
-    resetGame();
-}
-});
-</script>
-<dev>
+    </script>
+    <dev>
         <audio autoplay muted>
             <source src="https://res.cloudinary.com/dffcer8gc/video/upload/v1760101706/snh22_cx94t6.mp3" type="audio/mpeg">
         </audio>
