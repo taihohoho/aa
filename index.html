@@ -107,6 +107,31 @@
                 position: absolute;
                 text-align: center;
             }
+          /* ================================================= */
+/* CODE CHO BOX MỜ TRONG SUỐT ĐƠN GIẢN     */
+/* ================================================= */
+
+.text {
+    /* 1. Vị trí của box: Căn giữa ở dưới cùng */
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    /* 2. Tạo hình dáng cho box */
+    background-color: rgba(0, 0, 0, 0.05); 
+    
+    /* GIẢM KHOẢNG ĐỆM NGANG Ở ĐÂY */
+    padding: 12px 18px; /* Thử giảm xuống còn 18px trái/phải */
+                       
+    border-radius: 15px;                  
+    width: fit-content; 
+    max-width: 90%;                       
+
+    /* 3. Định dạng cho chữ bên trong */
+    text-align: center;
+    font-weight: bold;
+}
 /* Thêm vào thẻ <style> hiện tại */
 
 /* Ẩn/Hiện */
