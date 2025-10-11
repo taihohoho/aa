@@ -7,15 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <!--<meta itemprop="image" content="./images/fenxiang.png" />-->
         <style>
-        @keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-            html {
+                   html {
                 height: 100%;
             }
             body {
@@ -27,6 +19,45 @@
                 letter-spacing: 1.2px;
                 margin: 0;
             }
+           
+          /* ======================================================== */
+/* CODE CSS CUỐI CÙNG CHO LOGO (DÙNG PHƯƠNG PHÁP BỌC)  */
+/* ======================================================== */
+
+/* 1. Định nghĩa hành động xoay tròn */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* 2. Định dạng cho "hộp vô hình" đảm nhiệm việc xoay */
+.logo-rotator {
+    width: 128px;
+    height: 128px;
+    margin: 20px auto; /* Căn giữa */
+    
+    /* Áp dụng animation xoay tròn liên tục */
+    animation: spin 8s linear infinite;
+}
+
+/* 3. Định dạng cho ảnh logo bên trong */
+#logo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Bo tròn */
+    border: 3px solid #00a0ff;
+    box-shadow: 0px 0px 40px rgba(63, 81, 181, 0.72);
+    
+    /* Thêm hiệu ứng chuyển động mượt mà cho việc phóng to */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 4. Hiệu ứng phóng to khi di chuột hoặc nhấn vào logo */
+#logo:hover, #logo:active {
+    transform: scale(1.15); /* Phóng to logo lên 115% */
+    cursor: pointer;
+    box-shadow: 0 0 15px #fff, 0 0 30px #a7e0ff;
+}
             a {
                 color: #ebf7f4;
             }
@@ -47,24 +78,7 @@
                 margin: 0 auto;
                 display: block;
             }
-            img#logo {
-                width: 128px;
-                background-size: cover;
-                border-radius: 200px;
-                box-shadow: 0px 0px 40px rgba(63, 81, 181, 0.72);
-                border: 3px solid #00a0ff;
-                opacity: 1;
-                margin: 0 auto;
-                margin-top: 20px;
-                margin-bottom: 20px;
-                transition: all 1.0s;
-                animation: spin 8s linear infinite; /* <-- THÊM DÒNG NÀY */
-            }
-            #logo:hover {
-                box-shadow: 0 0 10px #fff;
-                -webkit-box-shadow: 0 0 19px #fff;
-                           }
-            .cs {
+                .cs {
                 width: 100%;
                 height: 100%;
                 margin: 0 auto;
@@ -183,7 +197,7 @@
 
 <button id="playBtn" 
   style="position: fixed; top: 25%; right: 50%; transform: translateX(50%); padding: 10px 20px; z-index: 9999;">
-  Bật nhạc lên nha 🎶
+  Bật nhạc lên nha Nhee ơi 🎶
 </button>
 <script>
   const btn = document.getElementById("playBtn");
@@ -195,9 +209,10 @@
 </script>
 
      <div class="cs">
+    <div class="logo-rotator">
         <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760095964/anhdayne.jpg" id="logo">
     </div>
-
+</div>
     <div id="image-carousel-container" class="hidden">
         <div class="carousel-wrapper">
             <button id="close-carousel-button">X</button>
@@ -737,6 +752,13 @@
             const prevButton = document.querySelector('.prev-button');
             const nextButton = document.querySelector('.next-button');
             const items = document.querySelectorAll('.carousel-item');
+          // --- HÀM DỪNG TẤT CẢ VIDEO TRONG CAROUSEL ---
+function pauseAllVideos() {
+    const videosInCarousel = document.querySelectorAll('.carousel video');
+    videosInCarousel.forEach(video => {
+        video.pause();
+    });
+}
          // --- TỰ ĐỘNG DỪNG NHẠC NỀN KHI VIDEO PHÁT ---
 
 const backgroundMusic = document.getElementById('bgm');
@@ -787,6 +809,8 @@ videosInCarousel.forEach(video => {
 
             // 2. Đóng Carousel
             closeButton.addEventListener('click', () => {
+                pauseAllVideos(); // <-- THÊM DÒNG NÀY
+                 backgroundMusic.play(); // <-- THÊM DÒNG NÀY ĐỂ BẬT LẠI NHẠC NỀN
                 carouselContainer.classList.add('hidden');
                 // Kích hoạt lại tính năng xoay của logo
                 logoButton.style.pointerEvents = 'auto'; 
@@ -802,12 +826,16 @@ videosInCarousel.forEach(video => {
 
             // Nút Tiếp theo
             nextButton.addEventListener('click', () => {
+                pauseAllVideos(); // <-- THÊM DÒNG NÀY
+                backgroundMusic.play(); // <-- THÊM DÒNG NÀY ĐỂ BẬT LẠI NHẠC NỀN
                 currentIndex = (currentIndex + 1) % totalItems; // Vòng lặp: 0 -> 1 -> 2 -> 0 -> ...
                 updateCarousel();
             });
 
             // Nút Quay lại
             prevButton.addEventListener('click', () => {
+                pauseAllVideos(); // <-- THÊM DÒNG NÀY
+                backgroundMusic.play(); // <-- THÊM DÒNG NÀY ĐỂ BẬT LẠI NHẠC NỀN
                 currentIndex = (currentIndex - 1 + totalItems) % totalItems; // Vòng lặp: 0 -> 2 -> 1 -> 0 -> ...
                 updateCarousel();
             });
