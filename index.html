@@ -1,14 +1,10 @@
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Danh cho Thao Nhi</title>
-        <link rel="Shortcut Icon" href="https://i.pinimg.com/236x/a5/20/de/a520deb545fea9b62776e6bea5d77928.jpg" type="image/x-icon" />
-   
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-        <!--<meta itemprop="image" content="./images/fenxiang.png" />-->
-       <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>iu thảo nhi</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <script src="data.js"></script>
         <style>
                    html {
                 height: 100%;
@@ -36,16 +32,14 @@
 }
 
 @keyframes gradientAnimation {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+
+            .body--ready .canvas {
+                opacity: 1;
+            }
 
 /* 2. Định dạng cho "hộp vô hình" đảm nhiệm việc xoay */
 .logo-rotator {
@@ -96,9 +90,6 @@
 }
             a {
                 color: #ebf7f4;
-            }
-            .body--ready {
-                /* The background properties were removed from here to allow the animated gradient to show. */
             }
             .text {
                 position: fixed;
@@ -268,51 +259,17 @@
 </script>
 
      <div class="cs">
-    <div class="logo-rotator">
-        <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760095964/anhdayne.jpg" id="logo">
+        <div class="logo-rotator">
+            <img src="" id="logo">
+        </div>
     </div>
-</div>
     <div id="image-carousel-container" class="hidden">
         <div class="carousel-wrapper">
             <button id="close-carousel-button">X</button>
             
             <div class="carousel">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760099997/1.jpg" class="carousel-item" alt="Ảnh 1">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760099998/2.jpg" class="carousel-item" alt="Ảnh 2">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760099998/3.jpg" class="carousel-item" alt="Ảnh 3">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760099999/5.jpg" class="carousel-item" alt="Ảnh 5">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760099998/4.jpg" class="carousel-item" alt="Ảnh 4">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760099999/6.jpg" class="carousel-item" alt="Ảnh 6">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760100000/7.jpg" class="carousel-item" alt="Ảnh 7">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760155664/8.jpg" class="carousel-item" alt="Ảnh 8">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760155664/9.jpg" class="carousel-item" alt="Ảnh 9">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760155665/10.jpg" class="carousel-item" alt="Ảnh 10">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158126/450467101_406292565780348_85A1134598449927289177_n_q1vgut.jpg" class="carousel-item" alt="Ảnh 11">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158126/12.jpg" class="carousel-item" alt="Ảnh 12">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158126/13.jpg" class="carousel-item" alt="Ảnh 13">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158127/14.jpg" class="carousel-item" alt="Ảnh 14">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158128/15.jpg" class="carousel-item" alt="Ảnh 15">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158130/16.jpg" class="carousel-item" alt="Ảnh 16">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158129/17.jpg" class="carousel-item" alt="Ảnh 17">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158130/18.jpg" class="carousel-item" alt="Ảnh 18">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158130/19.jpg" class="carousel-item" alt="Ảnh 19">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158132/20.jpg" class="carousel-item" alt="Ảnh 20">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158132/21.jpg" class="carousel-item" alt="Ảnh 21">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158132/22.jpg" class="carousel-item" alt="Ảnh 22">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158133/23.jpg" class="carousel-item" alt="Ảnh 23">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158133/24.jpg" class="carousel-item" alt="Ảnh 24">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158136/25.jpg" class="carousel-item" alt="Ảnh 25">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158136/26.jpg" class="carousel-item" alt="Ảnh 26">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158141/27.jpg" class="carousel-item" alt="Ảnh 27">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158146/28.jpg" class="carousel-item" alt="Ảnh 28">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158161/29.jpg" class="carousel-item" alt="Ảnh 29">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158168/30.jpg" class="carousel-item" alt="Ảnh 30">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158179/31.jpg" class="carousel-item" alt="Ảnh 31">
-                <img src="https://res.cloudinary.com/dffcer8gc/image/upload/v1760158837/33.jpg" class="carousel-item" alt="Ảnh 32">
-                <video class="carousel-item" controls>
-        <source src="https://res.cloudinary.com/dffcer8gc/video/upload/v1760158187/31.mp4" type="video/mp4">
-    </video>
-                </div>
+                <!-- Album content will be loaded here by JavaScript -->
+            </div>
             
             <button class="nav-button prev-button">❮</button>
             <button class="nav-button next-button">❯</button>
@@ -320,9 +277,7 @@
     </div>
 
     <canvas class="canvas" width="1820" height="905"></canvas>
-    <p class="text" style="color: #FFA500;">Anh Tài nek...vậy là đã được
-        <span id="span_dt_dt"></span><br> gặp nhau rùi đấy😘 Nhớ ấn vào ảnh nhé 🥰
-    </p>
+    <p class="text" style="color: #FFA500;"></p>
     <script language="javascript">
         function show_date_time() {
             window.setTimeout("show_date_time()", 1000);
@@ -348,7 +303,8 @@
             init: function () {
                 S.Drawing.init('.canvas');
                 document.body.classList.add('body--ready');
-                S.UI.simulate("Hếllo |Thảo Nhee|Chúc mừng|Sinh nhật|em nha|🎉|Hehehe|#countdown 3|Chúc em |Sinh nhật|Vui vẻ|Luôn luôn|Xinh đẹp|Học giỏi|Luôn luôn| May mắn |❤️|Tuổi mới|nhớ|cố gắng|hơn nữa|nhé|❤️|Zậy là|Anh đã |biết đến|em |được|1 năm rưỡi|rồi đó|Lần đầu|tiên|biết em|là lúc|em cos|Yaoyao đó|🙌|Vừa|nhảy đẹp|học giỏi|lễ phép|dễ thương|nên|trở thành|Fan|lúc nào|không hay| luôn|Mong rằng|em sẽ|luôn|có được|những thứ|tốt đẹp|nhất|🎉|THẢO❤️NHI");
+                // Use wishWords from the config object in data.js
+                S.UI.simulate(config.wishWords); 
                 S.Drawing.loop(function () {
                     S.Shape.render();
                 });
@@ -801,106 +757,118 @@
         }());
         S.init();
     </script>
-<script>
-        // Đặt đoạn JavaScript mới (đã được tạo ở trên) vào đây
+    <script>
+        // This new script will load all dynamic content from data.js
         document.addEventListener('DOMContentLoaded', (event) => {
+            // 1. Set the logo image source
+            document.getElementById('logo').src = config.logoImage;
+
+            // 2. Set the bottom message text
+            document.querySelector('.text').innerHTML = config.bottomMessage;
+            // We need to re-run the timer function after setting the text
+            show_date_time();
+
+            // 3. Populate the image/video carousel
+            const carousel = document.querySelector('.carousel');
+            carousel.innerHTML = ''; // Clear any existing content
+            config.albumImages.forEach(item => {
+                let element;
+                if (item.type === 'video') {
+                    element = document.createElement('video');
+                    element.className = 'carousel-item';
+                    element.controls = true;
+                    const source = document.createElement('source');
+                    source.src = item.src;
+                    source.type = 'video/mp4';
+                    element.appendChild(source);
+                } else {
+                    element = document.createElement('img');
+                    element.className = 'carousel-item';
+                    element.src = item.src;
+                    element.alt = item.alt || 'Album Image';
+                }
+                carousel.appendChild(element);
+            });
+
+            // 4. Re-initialize the carousel logic now that the items are loaded
             const logoButton = document.getElementById('logo');
             const carouselContainer = document.getElementById('image-carousel-container');
             const closeButton = document.getElementById('close-carousel-button');
-            const carousel = document.querySelector('.carousel');
             const prevButton = document.querySelector('.prev-button');
             const nextButton = document.querySelector('.next-button');
             const items = document.querySelectorAll('.carousel-item');
-          // --- HÀM DỪNG TẤT CẢ VIDEO TRONG CAROUSEL ---
-function pauseAllVideos() {
-    const videosInCarousel = document.querySelectorAll('.carousel video');
-    videosInCarousel.forEach(video => {
-        video.pause();
-    });
-}
-         // --- TỰ ĐỘNG DỪNG NHẠC NỀN KHI VIDEO PHÁT ---
+            const backgroundMusic = document.getElementById('bgm');
 
-const backgroundMusic = document.getElementById('bgm');
-const videosInCarousel = document.querySelectorAll('.carousel video');
+            function pauseAllVideos() {
+                const videosInCarousel = document.querySelectorAll('.carousel video');
+                videosInCarousel.forEach(video => {
+                    if (!video.paused) {
+                        video.pause();
+                    }
+                });
+            }
 
-// Hàm kiểm tra xem có video nào đang phát không
-const isAnyVideoPlaying = () => {
-    let isPlaying = false;
-    videosInCarousel.forEach(video => {
-        if (!video.paused) {
-            isPlaying = true;
-        }
-    });
-    return isPlaying;
-};
+            const isAnyVideoPlaying = () => {
+                let isPlaying = false;
+                document.querySelectorAll('.carousel video').forEach(video => {
+                    if (!video.paused) {
+                        isPlaying = true;
+                    }
+                });
+                return isPlaying;
+            };
 
-videosInCarousel.forEach(video => {
-    // Khi video bắt đầu phát -> Dừng nhạc nền
-    video.addEventListener('play', () => {
-        backgroundMusic.pause();
-    });
-
-    // Khi video dừng hoặc kết thúc -> Kiểm tra và bật lại nhạc nền
-    video.addEventListener('pause', () => {
-        if (!isAnyVideoPlaying()) {
-            backgroundMusic.play();
-        }
-    });
-    
-    video.addEventListener('ended', () => {
-        if (!isAnyVideoPlaying()) {
-            backgroundMusic.play();
-        }
-    });
-});
+            document.querySelectorAll('.carousel video').forEach(video => {
+                video.addEventListener('play', () => backgroundMusic.pause());
+                video.addEventListener('pause', () => {
+                    if (!isAnyVideoPlaying() && !backgroundMusic.paused) {
+                        backgroundMusic.play();
+                    }
+                });
+                video.addEventListener('ended', () => {
+                    if (!isAnyVideoPlaying() && !backgroundMusic.paused) {
+                        backgroundMusic.play();
+                    }
+                });
+            });
 
             let currentIndex = 0;
             const totalItems = items.length;
 
-            // --- CHỨC NĂNG MỞ/ĐÓNG CAROUSEL ---
-
-            // 1. Mở Carousel khi click vào logo
             logoButton.addEventListener('click', () => {
                 carouselContainer.classList.remove('hidden');
-                // Vô hiệu hóa tính năng xoay của logo khi carousel mở
-                logoButton.style.pointerEvents = 'none'; 
+                logoButton.style.pointerEvents = 'none';
             });
 
-            // 2. Đóng Carousel
             closeButton.addEventListener('click', () => {
-                pauseAllVideos(); // <-- THÊM DÒNG NÀY
-                 backgroundMusic.play(); // <-- THÊM DÒNG NÀY ĐỂ BẬT LẠI NHẠC NỀN
+                pauseAllVideos();
+                if (!backgroundMusic.paused) backgroundMusic.play();
                 carouselContainer.classList.add('hidden');
-                // Kích hoạt lại tính năng xoay của logo
-                logoButton.style.pointerEvents = 'auto'; 
+                logoButton.style.pointerEvents = 'auto';
             });
-
-            // --- CHỨC NĂNG CUỘN VÒNG LẶP ---
 
             function updateCarousel() {
-                // Tính toán vị trí dịch chuyển (100% cho mỗi ảnh)
-                const offset = -currentIndex * 100; 
-                carousel.style.transform = `translateX(${offset}%)`;
+                if (items.length > 0) {
+                    const offset = -currentIndex * 100;
+                    carousel.style.transform = `translateX(${offset}%)`;
+                }
             }
 
-            // Nút Tiếp theo
             nextButton.addEventListener('click', () => {
-                pauseAllVideos(); // <-- THÊM DÒNG NÀY
-                backgroundMusic.play(); // <-- THÊM DÒNG NÀY ĐỂ BẬT LẠI NHẠC NỀN
-                currentIndex = (currentIndex + 1) % totalItems; // Vòng lặp: 0 -> 1 -> 2 -> 0 -> ...
+                pauseAllVideos();
+                if (!backgroundMusic.paused) backgroundMusic.play();
+                currentIndex = (currentIndex + 1) % totalItems;
                 updateCarousel();
             });
 
-            // Nút Quay lại
             prevButton.addEventListener('click', () => {
-                pauseAllVideos(); // <-- THÊM DÒNG NÀY
-                backgroundMusic.play(); // <-- THÊM DÒNG NÀY ĐỂ BẬT LẠI NHẠC NỀN
-                currentIndex = (currentIndex - 1 + totalItems) % totalItems; // Vòng lặp: 0 -> 2 -> 1 -> 0 -> ...
+                pauseAllVideos();
+                if (!backgroundMusic.paused) backgroundMusic.play();
+                currentIndex = (currentIndex - 1 + totalItems) % totalItems;
                 updateCarousel();
             });
 
-            // Đảm bảo ảnh đầu tiên được hiển thị khi mở
-            updateCarousel(); 
+            updateCarousel();
         });
     </script>
     <dev>
