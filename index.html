@@ -15,12 +15,14 @@
             }
             body {
                 font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
-                background: #79a8ae;
                 color: #CFEBE4;
                 font-size: 18px;
                 line-height: 2;
                 letter-spacing: 1.2px;
                 margin: 0;
+                background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	            background-size: 400% 400%;
+	            animation: gradientAnimation 15s ease infinite;
             }
            
           /* ======================================================== */
@@ -31,6 +33,18 @@
 @keyframes spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
+}
+
+@keyframes gradientAnimation {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 /* 2. Định dạng cho "hộp vô hình" đảm nhiệm việc xoay */
@@ -84,11 +98,7 @@
                 color: #ebf7f4;
             }
             .body--ready {
-                background: -webkit-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
-                background: -moz-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
-                background: -o-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
-                background: -ms-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
-                background: linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
+                /* The background properties were removed from here to allow the animated gradient to show. */
             }
             .text {
                 position: fixed;
@@ -241,10 +251,11 @@
     </head>
     
     <body>
+   <a href="https://paveldogreat.github.io/WebGL-Fluid-Simulation/" target="_blank" id="fluid-game-link" style="position: fixed; top: 70px; right: 20px; background: #3a7bd5; color: white; padding: 10px 15px; border-radius: 10px; text-decoration: none; font-weight: bold; z-index: 10000; font-family: 'Grape Nuts', cursive;">Game Chất Lỏng ✨</a>
    <audio id="bgm" src="https://res.cloudinary.com/dffcer8gc/video/upload/v1760101706/snh22_cx94t6.mp3" preload="auto"></audio>
 
 <button id="playBtn" 
-  style="position: fixed; top: 25%; right: 50%; transform: translateX(50%); padding: 10px 20px; z-index: 9999;">
+  style="position: fixed; top: 25%; right: 50%; transform: translateX(50%); padding: 15px 30px; z-index: 9999; background: linear-gradient(45deg, #ff6ec4, #7873f5); color: white; border: none; border-radius: 50px; font-size: 18px; font-weight: bold; font-family: 'Grape Nuts', cursive; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: all 0.3s ease;">
   Bật nhạc lên nha Nhee ơi 🎶
 </button>
 <script>
