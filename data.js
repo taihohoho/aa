@@ -35,6 +35,6 @@ const config = {
         { src: "https://res.cloudinary.com/dffcer8gc/image/upload/v1760158837/33.jpg", alt: "Ảnh 32" },
         { type: 'video', src: "https://res.cloudinary.com/dffcer8gc/video/upload/v1760158187/31.mp4" }
     ],
-    wishWords: "Hếlloooo |Thảo Nhee|Chúc mừng|Sinh nhật|em nha|🎉|Hehehe|#countdown 3|Chúc em |Sinh nhật|Vui vẻ|Luôn luôn|Xinh đẹp|Học giỏi|Luôn luôn| May mắn |❤️|Tuổi mới|nhớ|cố gắng|hơn nữa|nhé|❤️|Zậy là|Anh đã |biết đến|em |được|1 năm rưỡi|rồi đó|Lần đầu|tiên|biết em|là lúc|em cos|Yaoyao đó|🙌|Vừa|nhảy đẹp|học giỏi|lễ phép|dễ thương|nên|trở thành|Fan|lúc nào|không hay| luôn|Mong rằng|em sẽ|luôn|có được|những thứ|tốt đẹp|nhất|🎉|THẢO❤️NHI",
+    wishWords: "Hếllo 🙌 |Thảo Nhee|Chúc mừng|Sinh nhật|Nhi nha|🎉🎉🎉|Hehehe|#countdown 3|Chúc Nhi |Tuổi mới|Vui vẻ|Luôn luôn|Xinh đẹp|Học giỏi|Luôn luôn| May mắn |❤️|Tuổi mới|nhớ|cố gắng|hơn nữa|nhé|❤️|Zậy là|Anh đã |biết đến|em |được|1 năm rưỡi|rồi đó|Lần đầu|tiên|biết em|là lúc|em cos|Yaoyao đó|🙌|Vừa|nhảy đẹp|học giỏi|lễ phép|dễ thương|nên|trở thành|Fan|lúc nào|không hay| luôn|Mong rằng|em sẽ|luôn|có được|những thứ|tốt đẹp|nhất|🎉|THẢO❤️NHI",
     bottomMessage: "Anh Tài nek...vậy là đã được <span id=\"span_dt_dt\"></span><br> gặp nhau rùi đấy😘 Nhớ ấn vào ảnh nhé 🥰"
 };
