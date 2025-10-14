@@ -6,307 +6,355 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <script src="data.js"></script>
         <style>
-                   html {
-                height: 100%;
+        /* === CÀI ĐẶT CHUNG CHO TOÀN TRANG === */
+        html {
+            height: 100%; /* Đảm bảo html chiếm toàn bộ chiều cao */
+        }
+        body {
+            font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif; /* Font chữ chung */
+            color: #CFEBE4; /* Màu chữ mặc định */
+            font-size: 18px; /* Cỡ chữ mặc định */
+            line-height: 2; /* Chiều cao dòng */
+            letter-spacing: 1.2px; /* Khoảng cách giữa các ký tự */
+            margin: 0; /* Loại bỏ lề mặc định */
+            /* Nền chuyển màu hoạt hình */
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%; /* Kích thước nền lớn hơn để có không gian cho animation */
+            animation: gradientAnimation 15s ease infinite; /* Áp dụng animation chuyển màu */
+        }
+       
+        /* ======================================================== */
+        /* CODE CSS CHO LOGO XOAY TRÒN */
+        /* ======================================================== */
+
+        /* 1. Định nghĩa hành động xoay tròn (animation keyframes) */
+        @keyframes spin {
+            from { transform: rotate(0deg); } /* Bắt đầu từ góc 0 độ */
+            to { transform: rotate(360deg); } /* Kết thúc ở góc 360 độ (một vòng hoàn chỉnh) */
+        }
+
+        /* Định nghĩa animation cho nền chuyển màu */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Khi body sẵn sàng (JS thêm class này), làm mờ các phần tử để hiện ra từ từ */
+        .body--ready .canvas {
+            opacity: 1;
+        }
+
+        /* 2. Định dạng cho "hộp bao bọc" logo, hộp này sẽ đảm nhiệm việc xoay */
+        .logo-rotator {
+            width: 128px; /* Chiều rộng */
+            height: 128px; /* Chiều cao */
+            margin: 20px auto; /* Căn giữa theo chiều ngang */
+            
+            /* Áp dụng animation 'spin' đã định nghĩa ở trên */
+            animation: spin 8s linear infinite; /* Xoay tròn trong 8 giây, lặp lại vô hạn */
+        }
+
+        /* 3. Định dạng cho ảnh logo thực tế nằm bên trong */
+        #logo {
+            width: 100%; /* Chiều rộng bằng hộp bao bọc */
+            height: 100%; /* Chiều cao bằng hộp bao bọc */
+            border-radius: 50%; /* Bo tròn để tạo hình tròn */
+            border: 3px solid #00a0ff; /* Viền màu xanh */
+            box-shadow: 0px 0px 40px rgba(63, 81, 181, 0.72); /* Đổ bóng mờ */
+            
+            /* Thêm hiệu ứng chuyển động mượt mà khi thay đổi kích thước và bóng */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* 4. Hiệu ứng khi người dùng di chuột qua hoặc nhấn vào logo */
+        #logo:hover, #logo:active {
+            transform: scale(1.15); /* Phóng to logo lên 115% */
+            cursor: pointer; /* Đổi con trỏ chuột thành hình bàn tay */
+            box-shadow: 0 0 15px #fff, 0 0 30px #a7e0ff; /* Thay đổi bóng để tạo hiệu ứng phát sáng */
+        }
+        /* ================================================= */
+        /* CODE ĐIỀU CHỈNH CỠ CHỮ THEO KÍCH THƯỚC MÀN HÌNH (RESPONSIVE) */
+        /* ================================================= */
+
+        /* 1. Cỡ chữ mặc định (cho màn hình nhỏ như điện thoại) */
+        .text {
+            .timer-number {
+                color: #FFFFFF; /* Màu trắng cho số đếm ngược */
+                font-weight: bold; /* Làm số đậm hơn cho nổi bật */
             }
-            body {
-                font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
-                color: #CFEBE4;
-                font-size: 18px;
-                line-height: 2;
-                letter-spacing: 1.2px;
-                margin: 0;
-                background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	            background-size: 400% 400%;
-	            animation: gradientAnimation 15s ease infinite;
-            }
-           
-          /* ======================================================== */
-/* CODE CSS CUỐI CÙNG CHO LOGO (DÙNG PHƯƠNG PHÁP BỌC)  */
-/* ======================================================== */
+            font-size: 21px; 
+        }
 
-/* 1. Định nghĩa hành động xoay tròn */
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-@keyframes gradientAnimation {
-                0% { background-position: 0% 50%; }
-                50% { background-position: 100% 50%; }
-                100% { background-position: 0% 50%; }
-            }
-
-            .body--ready .canvas {
-                opacity: 1;
-            }
-
-/* 2. Định dạng cho "hộp vô hình" đảm nhiệm việc xoay */
-.logo-rotator {
-    width: 128px;
-    height: 128px;
-    margin: 20px auto; /* Căn giữa */
-    
-    /* Áp dụng animation xoay tròn liên tục */
-    animation: spin 8s linear infinite;
-}
-
-/* 3. Định dạng cho ảnh logo bên trong */
-#logo {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%; /* Bo tròn */
-    border: 3px solid #00a0ff;
-    box-shadow: 0px 0px 40px rgba(63, 81, 181, 0.72);
-    
-    /* Thêm hiệu ứng chuyển động mượt mà cho việc phóng to */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-/* 4. Hiệu ứng phóng to khi di chuột hoặc nhấn vào logo */
-#logo:hover, #logo:active {
-    transform: scale(1.15); /* Phóng to logo lên 115% */
-    cursor: pointer;
-    box-shadow: 0 0 15px #fff, 0 0 30px #a7e0ff;
-}
-/* ================================================= */
-/* CODE ĐIỀU CHỈNH CỠ CHỮ THEO MÀN HÌNH    */
-/* ================================================= */
-
-/* 1. Đặt cỡ chữ mặc định (áp dụng cho điện thoại) */
-.text {
-     .timer-number {
-    color: #FFFFFF; /* <-- Màu trắng */
-    font-weight: bold; /* Làm số đậm hơn cho nổi bật */
-}
-    font-size: 21px; 
-}
-
-/* 2. Đặt cỡ chữ lớn hơn KHI màn hình rộng từ 768px trở lên (máy tính) */
-@media (min-width: 768px) {
-    .text {
-             font-size: 28px; /* <-- Cỡ chữ cho máy tính, bạn có thể thay đổi số này */
-    }
-}
-            a {
-                color: #ebf7f4;
-            }
+        /* 2. Thay đổi cỡ chữ KHI màn hình rộng từ 768px trở lên (máy tính bảng, máy tính) */
+        @media (min-width: 768px) {
             .text {
-                position: fixed;
-                bottom: 100px;
-                text-align: center;
-                width: 100%;
+                font-size: 28px; /* Cỡ chữ lớn hơn cho màn hình lớn */
             }
-            .canvas {
-                margin: 0 auto;
-                display: block;
-            }
-                .cs {
-                width: 100%;
-                height: 100%;
-                margin: 0 auto;
-                position: absolute;
-                text-align: center;
-            }
-          /* ================================================= */
-/* CODE CHO BOX MỜ TRONG SUỐT ĐƠN GIẢN     */
-/* ================================================= */
+        }
+        a {
+            color: #ebf7f4; /* Màu cho các thẻ link */
+        }
+        .text {
+            position: fixed; /* Giữ cố định vị trí khi cuộn trang */
+            bottom: 100px; /* Vị trí cách đáy 100px */
+            text-align: center; /* Căn giữa chữ */
+            width: 100%; /* Chiếm toàn bộ chiều rộng */
+        }
+        .canvas {
+            margin: 0 auto; /* Căn giữa canvas */
+            display: block; /* Hiển thị dạng block */
+        }
+        .cs {
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            position: absolute; /* Vị trí tuyệt đối để nằm chồng lên các lớp khác */
+            text-align: center;
+        }
+        /* ================================================= */
+        /* CODE CHO HỘP TIN NHẮN TRONG SUỐT Ở DƯỚI */
+        /* ================================================= */
 
-.text {
-    /* 1. Vị trí của box: Căn giữa ở dưới cùng */
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+        .text {
+            /* 1. Vị trí của hộp: Căn giữa ở gần dưới cùng */
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%); /* Kỹ thuật căn giữa tuyệt đối theo chiều ngang */
 
-    /* 2. Tạo hình dáng cho box */
-    background-color: rgba(0, 0, 0, 0.05); 
-    
-    /* GIẢM KHOẢNG ĐỆM NGANG Ở ĐÂY */
-    padding: 12px 18px; /* Thử giảm xuống còn 18px trái/phải */
+            /* 2. Tạo hình dáng cho hộp */
+            background-color: rgba(0, 0, 0, 0.05); /* Nền đen mờ 5% */
+            
+            padding: 12px 18px; /* Khoảng đệm bên trong hộp (trên-dưới, trái-phải) */
                        
-    border-radius: 15px;                  
-    width: fit-content; 
-    max-width: 90%;                       
+            border-radius: 15px; /* Bo tròn các góc */
+            width: fit-content; /* Chiều rộng tự động co dãn theo nội dung */
+            max-width: 90%; /* Chiều rộng tối đa là 90% màn hình để không bị tràn */
 
-    /* 3. Định dạng cho chữ bên trong */
-    text-align: center;
-    font-weight: bold;
-}
-/* Thêm vào thẻ <style> hiện tại */
+            /* 3. Định dạng cho chữ bên trong */
+            text-align: center;
+            font-weight: bold;
+        }
+        /* ================================================= */
+        /* CODE CHO ALBUM ẢNH (CAROUSEL) */
+        /* ================================================= */
 
-/* Ẩn/Hiện */
-.hidden {
-    display: none !important;
-}
+        /* Ẩn/Hiện phần tử */
+        .hidden {
+            display: none !important; /* Dùng !important để đảm bảo luôn ẩn khi có class này */
+        }
 
-/* Container chính của Carousel */
-#image-carousel-container {
-    position: fixed; /* Giữ nó nằm trên các thành phần khác */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Sử dụng màu nền tối mờ để làm nổi bật ảnh, vẫn giữ được phông nền gradient */
-    background: rgba(0, 0, 0, 0.8); 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Đảm bảo nó nằm trên tất cả các lớp khác */
-}
+        /* Lớp phủ toàn màn hình cho Carousel */
+        #image-carousel-container {
+            position: fixed; /* Nằm cố định trên màn hình */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8); /* Nền đen mờ 80% để làm nổi bật ảnh */
+            display: flex; /* Sử dụng flexbox để căn giữa nội dung */
+            justify-content: center; /* Căn giữa theo chiều ngang */
+            align-items: center; /* Căn giữa theo chiều dọc */
+            z-index: 1000; /* Đảm bảo nó nằm trên tất cả các lớp khác */
+        }
 
-.carousel-wrapper {
-    position: relative;
-    width: 80%; /* Chiều rộng của carousel */
-    max-width: 900px; /* Giới hạn kích thước tối đa */
-    height: 80vh; /* Chiều cao dựa trên viewport */
-    overflow: hidden; /* Quan trọng để chỉ hiển thị một ảnh mỗi lần */
-    border-radius: 10px;
-    box-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
-}
+        /* Hộp bao bọc chính của carousel */
+        .carousel-wrapper {
+            position: relative; /* Để các nút có thể định vị tuyệt đối bên trong nó */
+            width: 80%; /* Chiều rộng bằng 80% màn hình */
+            max-width: 900px; /* Chiều rộng tối đa 900px */
+            height: 80vh; /* Chiều cao bằng 80% chiều cao của viewport */
+            overflow: hidden; /* Quan trọng: Ẩn các ảnh không được hiển thị */
+            border-radius: 10px; /* Bo góc */
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.5); /* Đổ bóng phát sáng */
+        }
 
-.carousel {
-    display: flex; /* Quan trọng để các ảnh nằm trên một hàng ngang */
-    width: 100%;
-    height: 100%;
-    transition: transform 0.5s ease-in-out; /* Tạo hiệu ứng cuộn mượt mà */
-}
+        /* Vùng chứa các ảnh/video */
+        .carousel {
+            display: flex; /* Quan trọng: Xếp các ảnh/video nằm trên một hàng ngang */
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out; /* Tạo hiệu ứng cuộn mượt mà khi chuyển ảnh */
+        }
 
-.carousel-item {
-    min-width: 100%; /* Đảm bảo mỗi ảnh chiếm trọn chiều rộng của wrapper */
-    height: 100%;
-    object-fit: contain; /* Giữ tỷ lệ ảnh và hiển thị toàn bộ trong khung */
-    user-select: none; /* Không cho phép chọn ảnh */
-}
+        /* Từng ảnh/video trong carousel */
+        .carousel-item {
+            min-width: 100%; /* Đảm bảo mỗi item chiếm trọn chiều rộng của wrapper */
+            height: 100%;
+            object-fit: contain; /* Giữ tỷ lệ của ảnh/video và hiển thị toàn bộ trong khung */
+            user-select: none; /* Không cho phép người dùng chọn (bôi đen) ảnh */
+        }
 
-/* Nút chuyển ảnh */
-.nav-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 15px;
-    cursor: pointer;
-    font-size: 24px;
-    z-index: 10;
-    transition: background 0.3s;
-    border-radius: 5px;
-}
+        /* Các nút chuyển ảnh (trước/sau) */
+        .nav-button {
+            position: absolute; /* Vị trí tuyệt đối so với carousel-wrapper */
+            top: 50%;
+            transform: translateY(-50%); /* Căn giữa theo chiều dọc */
+            background: rgba(0, 0, 0, 0.5); /* Nền đen mờ */
+            color: white; /* Màu icon */
+            border: none; /* Bỏ viền */
+            padding: 15px;
+            cursor: pointer;
+            font-size: 24px;
+            z-index: 10; /* Nằm trên ảnh */
+            transition: background 0.3s; /* Hiệu ứng chuyển màu nền mượt mà */
+            border-radius: 5px;
+        }
 
-.nav-button:hover {
-    background: rgba(0, 0, 0, 0.8);
-}
+        .nav-button:hover {
+            background: rgba(0, 0, 0, 0.8); /* Đậm hơn khi di chuột qua */
+        }
 
-.prev-button {
-    left: 10px;
-}
+        .prev-button {
+            left: 10px; /* Nút "Trước" ở bên trái */
+        }
 
-.next-button {
-    right: 10px;
-}
+        .next-button {
+            right: 10px; /* Nút "Sau" ở bên phải */
+        }
 
-/* Nút Đóng */
-#close-carousel-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: #ff4d4d;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 50%;
-    z-index: 11;
-}
-            .text {
-                position: fixed;
-                bottom: 20px;
-                text-align: center;
-                width: 100%;
-                font-weight: bold;
-                font-family: "Grape Nuts", cursive;
-            }
-            .text-right {
-                position: fixed;
-                bottom: 50px;
-                text-align: right;
-                width: 100%;
-                font-weight: bold;
-            }
-        </style>
+        /* Nút Đóng (X) */
+        #close-carousel-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff4d4d; /* Màu đỏ */
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 50%; /* Bo tròn thành hình tròn */
+            z-index: 11; /* Nằm trên cả các nút nav */
+        }
+        .text {
+            position: fixed;
+            bottom: 20px;
+            text-align: center;
+            width: 100%;
+            font-weight: bold;
+            font-family: "Grape Nuts", cursive; /* Font chữ nghệ thuật */
+        }
+        .text-right {
+            position: fixed;
+            bottom: 50px;
+            text-align: right;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        #fluid-simulation-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            z-index: 7;
+            font-family: 'Arial', sans-serif;
+            transition: background-color 0.3s;
+        }
+
+        #fluid-simulation-btn:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+    </style>
     
     </head>
     
     <body>
-   <a href="https://paveldogreat.github.io/WebGL-Fluid-Simulation/" target="_blank" id="fluid-game-link" style="position: fixed; top: 20px; left: 20px; background: #3a7bd5; color: white; padding: 10px 15px; border-radius: 10px; text-decoration: none; font-weight: bold; z-index: 6; font-family: 'Grape Nuts', cursive;">Game</a>
-   <audio id="bgm" src="https://res.cloudinary.com/dffcer8gc/video/upload/v1760101706/snh22_cx94t6.mp3" preload="auto"></audio>
+    <!-- Nút game mô phỏng chất lỏng -->
+    <a id="fluid-simulation-btn" href="fluid.html" target="_blank">Game</a>
+    
+    <!-- Thẻ audio cho nhạc nền -->
+    <audio id="bgm" src="https://res.cloudinary.com/dffcer8gc/video/upload/v1760101706/snh22_cx94t6.mp3" preload="auto"></audio>
 
-<button id="playBtn" 
-  style="position: fixed; top: 25%; right: 50%; transform: translateX(50%); padding: 15px 30px; z-index: 7; background: linear-gradient(45deg, #ff6ec4, #7873f5); color: white; border: none; border-radius: 50px; font-size: 18px; font-weight: bold; font-family: 'Grape Nuts', cursive; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: all 0.3s ease;">
-  Bật nhạc lên nha Nhee ơi 🎶
-</button>
-<script>
-  const btn = document.getElementById("playBtn");
-  const audio = document.getElementById("bgm");
-  btn.addEventListener("click", () => {
-    audio.play();
-    btn.style.display = "none"; // ẩn nút sau khi bật nhạc
-  });
-</script>
+    <!-- Nút bật nhạc -->
+    <button id="playBtn" 
+    style="position: fixed; top: 25%; right: 50%; transform: translateX(50%); padding: 15px 30px; z-index: 7; background: linear-gradient(45deg, #ff6ec4, #7873f5); color: white; border: none; border-radius: 50px; font-size: 18px; font-weight: bold; font-family: 'Grape Nuts', cursive; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+    Bật nhạc lên nha Nhee ơi 🎶
+    </button>
+    <!-- Script đơn giản cho nút bật nhạc -->
+    <script>
+        const btn = document.getElementById("playBtn");
+        const audio = document.getElementById("bgm");
+        btn.addEventListener("click", () => {
+            audio.play(); // Phát nhạc
+            btn.style.display = "none"; // Ẩn nút đi sau khi đã click
+        });
+    </script>
 
-     <div class="cs">
+    <!-- Vùng chứa logo xoay -->
+    <div class="cs">
         <div class="logo-rotator">
+            <!-- Ảnh logo sẽ được tải vào đây bằng JavaScript -->
             <img src="" id="logo">
         </div>
     </div>
+    
+    <!-- Vùng chứa album ảnh (carousel), mặc định bị ẩn -->
     <div id="image-carousel-container" class="hidden">
         <div class="carousel-wrapper">
+            <!-- Nút đóng album -->
             <button id="close-carousel-button">X</button>
             
+            <!-- Nơi chứa các ảnh/video, sẽ được tải vào bằng JavaScript -->
             <div class="carousel">
                 <!-- Album content will be loaded here by JavaScript -->
             </div>
             
+            <!-- Nút chuyển ảnh/video -->
             <button class="nav-button prev-button">❮</button>
             <button class="nav-button next-button">❯</button>
         </div>
     </div>
 
+    <!-- Canvas để vẽ hiệu ứng chữ hạt -->
     <canvas class="canvas" width="1820" height="905"></canvas>
+    
+    <!-- Dòng chữ tin nhắn ở dưới, nội dung được tải từ data.js -->
     <p class="text" style="color: #FFA500;"></p>
+    
+    <!-- Script cho đồng hồ đếm ngược -->
     <script language="javascript">
         function show_date_time() {
-            window.setTimeout("show_date_time()", 1000);
-            BirthDay = new Date("02/03/2025 18:00:00");
-            today = new Date();
-            timeold = (today.getTime() - BirthDay.getTime());
-            sectimeold = timeold / 1000
+            window.setTimeout("show_date_time()", 1000); // Lặp lại hàm này mỗi giây
+            BirthDay = new Date("02/03/2025 18:00:00"); // Ngày sinh nhật trong tương lai
+            today = new Date(); // Ngày giờ hiện tại
+            timeold = (today.getTime() - BirthDay.getTime()); // Tính khoảng thời gian (âm vì là tương lai)
+            sectimeold = timeold / 1000;
             secondsold = Math.floor(sectimeold);
-            msPerDay = 24 * 60 * 60 * 1000
-            e_daysold = timeold / msPerDay
+            msPerDay = 24 * 60 * 60 * 1000; // Số mili giây trong một ngày
+            e_daysold = timeold / msPerDay;
             daysold = Math.floor(e_daysold);
             e_hrsold = (e_daysold - daysold) * 24;
             hrsold = Math.floor(e_hrsold);
             e_minsold = (e_hrsold - hrsold) * 60;
             minsold = Math.floor((e_hrsold - hrsold) * 60);
             seconds = Math.floor((e_minsold - minsold) * 60);
-            span_dt_dt.innerHTML = '<span class="timer-number">' + daysold + '</span>' + " Ngày " + '<span class="timer-number">' + hrsold + '</span>' + " Giờ " + '<span class="timer-number">' + minsold + '</span>' + " Phút " + '<span class="timer-number">' + seconds + '</span>' + " Giây";
+            // Hiển thị kết quả vào thẻ có id là span_dt_dt (nằm trong tin nhắn được tải từ data.js)
+            // Lưu ý: Cần đảm bảo thẻ span này tồn tại trước khi script chạy
+            if (document.getElementById('span_dt_dt')) {
+                span_dt_dt.innerHTML = '<span class="timer-number">' + daysold + '</span>' + " Ngày " + '<span class="timer-number">' + hrsold + '</span>' + " Giờ " + '<span class="timer-number">' + minsold + '</span>' + " Phút " + '<span class="timer-number">' + seconds + '</span>' + " Giây";
+            }
         }
-        show_date_time();
+        // Không gọi show_date_time() ở đây nữa, nó sẽ được gọi sau khi DOM được tải
     </script>
+    
+    <!-- Script cho hiệu ứng chữ hạt (particle text) -->
     <script>
         var S = {
             init: function () {
-                S.Drawing.init('.canvas');
-                document.body.classList.add('body--ready');
-                // Use wishWords from the config object in data.js
+                S.Drawing.init('.canvas'); // Khởi tạo canvas
+                document.body.classList.add('body--ready'); // Thêm class để kích hoạt hiệu ứng mờ
+                // Sử dụng chuỗi lời chúc từ file data.js
                 S.UI.simulate(config.wishWords); 
                 S.Drawing.loop(function () {
-                    S.Shape.render();
+                    S.Shape.render(); // Bắt đầu vòng lặp vẽ
                 });
             }
         };
@@ -757,57 +805,67 @@
         }());
         S.init();
     </script>
+    
+    <!-- SCRIPT CHÍNH: Tải và xử lý toàn bộ nội dung động từ data.js -->
     <script>
-        // This new script will load all dynamic content from data.js
+        // Chờ cho toàn bộ cấu trúc HTML của trang được tải xong rồi mới chạy code
         document.addEventListener('DOMContentLoaded', (event) => {
-            // 1. Set the logo image source
+            
+            // --- PHẦN 1: TẢI DỮ LIỆU TỪ `config` VÀO TRANG ---
+
+            // 1. Tải ảnh logo
             document.getElementById('logo').src = config.logoImage;
 
-            // 2. Set the bottom message text
+            // 2. Tải tin nhắn ở cuối trang
             document.querySelector('.text').innerHTML = config.bottomMessage;
-            // We need to re-run the timer function after setting the text
+            // Sau khi tải tin nhắn (chứa thẻ span đếm ngược), ta phải gọi lại hàm đồng hồ
             show_date_time();
 
-            // 3. Populate the image/video carousel
+            // 3. Tải và tạo các mục trong album (carousel)
             const carousel = document.querySelector('.carousel');
-            carousel.innerHTML = ''; // Clear any existing content
+            carousel.innerHTML = ''; // Xóa sạch nội dung cũ trong carousel để tránh trùng lặp
             config.albumImages.forEach(item => {
                 let element;
+                // Kiểm tra xem mục này là video hay ảnh
                 if (item.type === 'video') {
                     element = document.createElement('video');
                     element.className = 'carousel-item';
-                    element.controls = true;
+                    element.controls = true; // Hiển thị các nút điều khiển cho video
                     const source = document.createElement('source');
                     source.src = item.src;
                     source.type = 'video/mp4';
                     element.appendChild(source);
-                } else {
+                } else { // Nếu không phải video thì là ảnh
                     element = document.createElement('img');
                     element.className = 'carousel-item';
                     element.src = item.src;
                     element.alt = item.alt || 'Album Image';
                 }
-                carousel.appendChild(element);
+                carousel.appendChild(element); // Thêm ảnh/video vừa tạo vào carousel
             });
 
-            // 4. Re-initialize the carousel logic now that the items are loaded
+            // --- PHẦN 2: KHỞI TẠO LẠI LOGIC CHO CAROUSEL SAU KHI ĐÃ TẢI DỮ LIỆU ---
+            // (Phải làm lại vì các item trong carousel được tạo động)
+
             const logoButton = document.getElementById('logo');
             const carouselContainer = document.getElementById('image-carousel-container');
             const closeButton = document.getElementById('close-carousel-button');
             const prevButton = document.querySelector('.prev-button');
             const nextButton = document.querySelector('.next-button');
-            const items = document.querySelectorAll('.carousel-item');
+            const items = document.querySelectorAll('.carousel-item'); // Lấy lại danh sách các item
             const backgroundMusic = document.getElementById('bgm');
 
+            // Hàm để dừng tất cả video đang phát trong carousel
             function pauseAllVideos() {
                 const videosInCarousel = document.querySelectorAll('.carousel video');
                 videosInCarousel.forEach(video => {
-                    if (!video.paused) {
+                    if (!video.paused) { // Chỉ dừng video nào đang phát
                         video.pause();
                     }
                 });
             }
 
+            // Hàm kiểm tra xem có video nào đang phát không
             const isAnyVideoPlaying = () => {
                 let isPlaying = false;
                 document.querySelectorAll('.carousel video').forEach(video => {
@@ -818,57 +876,63 @@
                 return isPlaying;
             };
 
+            // Tự động dừng nhạc nền khi video trong carousel phát
             document.querySelectorAll('.carousel video').forEach(video => {
-                video.addEventListener('play', () => backgroundMusic.pause());
-                video.addEventListener('pause', () => {
-                    if (!isAnyVideoPlaying() && !backgroundMusic.paused) {
-                        backgroundMusic.play();
+                video.addEventListener('play', () => backgroundMusic.pause()); // Khi video phát, dừng nhạc nền
+                video.addEventListener('pause', () => { // Khi video dừng
+                    if (!isAnyVideoPlaying() && backgroundMusic.paused) { // Nếu không có video nào khác đang phát và nhạc nền đang dừng
+                        backgroundMusic.play(); // thì phát lại nhạc nền
                     }
                 });
-                video.addEventListener('ended', () => {
-                    if (!isAnyVideoPlaying() && !backgroundMusic.paused) {
+                video.addEventListener('ended', () => { // Tương tự khi video kết thúc
+                    if (!isAnyVideoPlaying() && backgroundMusic.paused) {
                         backgroundMusic.play();
                     }
                 });
             });
 
-            let currentIndex = 0;
-            const totalItems = items.length;
+            let currentIndex = 0; // Vị trí của ảnh/video hiện tại
+            const totalItems = items.length; // Tổng số ảnh/video
 
+            // Mở carousel khi nhấn vào logo
             logoButton.addEventListener('click', () => {
-                carouselContainer.classList.remove('hidden');
-                logoButton.style.pointerEvents = 'none';
+                carouselContainer.classList.remove('hidden'); // Hiện carousel
+                logoButton.style.pointerEvents = 'none'; // Vô hiệu hóa click vào logo khi carousel đang mở
             });
 
+            // Đóng carousel khi nhấn nút X
             closeButton.addEventListener('click', () => {
-                pauseAllVideos();
-                if (!backgroundMusic.paused) backgroundMusic.play();
-                carouselContainer.classList.add('hidden');
-                logoButton.style.pointerEvents = 'auto';
+                pauseAllVideos(); // Dừng tất cả video trước khi đóng
+                if (backgroundMusic.paused) backgroundMusic.play(); // Bật lại nhạc nền nếu đang tắt
+                carouselContainer.classList.add('hidden'); // Ẩn carousel
+                logoButton.style.pointerEvents = 'auto'; // Cho phép click lại vào logo
             });
 
+            // Hàm cập nhật vị trí hiển thị của carousel
             function updateCarousel() {
                 if (items.length > 0) {
-                    const offset = -currentIndex * 100;
+                    const offset = -currentIndex * 100; // Dịch chuyển sang trái 100% cho mỗi item
                     carousel.style.transform = `translateX(${offset}%)`;
                 }
             }
 
+            // Sự kiện cho nút "Next"
             nextButton.addEventListener('click', () => {
-                pauseAllVideos();
-                if (!backgroundMusic.paused) backgroundMusic.play();
-                currentIndex = (currentIndex + 1) % totalItems;
+                pauseAllVideos(); // Dừng video hiện tại
+                if (backgroundMusic.paused) backgroundMusic.play(); // Bật lại nhạc nền
+                currentIndex = (currentIndex + 1) % totalItems; // Chuyển đến item tiếp theo, quay vòng lại nếu hết
                 updateCarousel();
             });
 
+            // Sự kiện cho nút "Previous"
             prevButton.addEventListener('click', () => {
-                pauseAllVideos();
-                if (!backgroundMusic.paused) backgroundMusic.play();
-                currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+                pauseAllVideos(); // Dừng video hiện tại
+                if (backgroundMusic.paused) backgroundMusic.play(); // Bật lại nhạc nền
+                currentIndex = (currentIndex - 1 + totalItems) % totalItems; // Chuyển đến item trước đó, quay vòng lại nếu hết
                 updateCarousel();
             });
 
-            updateCarousel();
+            updateCarousel(); // Gọi lần đầu để hiển thị item đầu tiên
         });
     </script>
     <dev>
