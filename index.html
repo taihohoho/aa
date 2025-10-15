@@ -166,8 +166,25 @@
             max-width: 900px; /* Chiều rộng tối đa 900px */
             height: 80vh; /* Chiều cao bằng 80% chiều cao của viewport */
             overflow: hidden; /* Quan trọng: Ẩn các ảnh không được hiển thị */
-            border-radius: 10px; /* Bo góc */
-            box-shadow: 0 0 50px rgba(255, 255, 255, 0.5); /* Đổ bóng phát sáng */
+            border-radius: 20px; /* Bo góc */
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.5); /* Đổ bóng mờ */
+        }
+
+        /* Tạo hiệu ứng bóng gradient cho carousel */
+        .carousel-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -15px; 
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            z-index: -1;
+            filter: blur(30px); /* Làm mờ để tạo hiệu ứng bóng */
+            border-radius: 20px; /* Giữ cho bóng cũng được bo tròn */
+            opacity: 0.5; /* Thêm độ mờ cho hiệu ứng bóng */
         }
 
         /* Vùng chứa các ảnh/video */
@@ -184,6 +201,7 @@
             height: 100%;
             object-fit: contain; /* Giữ tỷ lệ của ảnh/video và hiển thị toàn bộ trong khung */
             user-select: none; /* Không cho phép người dùng chọn (bôi đen) ảnh */
+           
         }
 
         /* Các nút chuyển ảnh (trước/sau) */
