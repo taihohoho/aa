@@ -320,13 +320,28 @@
     <button id="playBtn">
     Bật nhạc lên nha Nhee ơi 🎶
     </button>
-    <!-- Script đơn giản cho nút bật nhạc -->
+    <!-- Script cho nút bật nhạc và vào chế độ toàn màn hình -->
     <script>
         const btn = document.getElementById("playBtn");
         const audio = document.getElementById("bgm");
         btn.addEventListener("click", () => {
-            audio.play(); // Phát nhạc
-            btn.style.display = "none"; // Ẩn nút đi sau khi đã click
+            // Bật nhạc
+            audio.play();
+
+            // Yêu cầu vào chế độ toàn màn hình
+            const elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen().catch(err => {
+                    console.log(`Không thể bật chế độ toàn màn hình: ${err.message} (${err.name})`);
+                });
+            } else if (elem.webkitRequestFullscreen) { /* Safari */
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { /* IE11 */
+                elem.msRequestFullscreen();
+            }
+
+            // Ẩn nút đi sau khi đã click
+            btn.style.display = "none";
         });
     </script>
 
@@ -985,4 +1000,3 @@
 
 </body>
 </html>
-
