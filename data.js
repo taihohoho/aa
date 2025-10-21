@@ -11,7 +11,7 @@ const config = {
         { src: "https://res.cloudinary.com/dffcer8gc/image/upload/v1760155664/8.jpg", alt: "Ảnh 8" },
         { src: "https://res.cloudinary.com/dffcer8gc/image/upload/v1760155664/9.jpg", alt: "Ảnh 9" },
         { src: "https://res.cloudinary.com/dffcer8gc/image/upload/v1760155665/10.jpg", alt: "Ảnh 10" },
-        { src: "https://res.cloudinary.com/dffcer8gc/image/upload/v1760158126/450467101_406292565780348_85A1134598449927289177_n_q1vgut.jpg", alt: "Ảnh 11" },
+        { src: "https://res.cloudinary.com/dffcer8gc/image/upload/v1760158126/11.jpg", alt: "Ảnh 11" },
         { src: "https://res.cloudinary.com/dffcer8gc/image/upload/v1760158126/12.jpg", alt: "Ảnh 12" },
         { src: "https://res.cloudinary.com/dffcer8gc/image/upload/v1760158126/13.jpg", alt: "Ảnh 13" },
         { src: "https://res.cloudinary.com/dffcer8gc/image/upload/v1760158127/14.jpg", alt: "Ảnh 14" },
@@ -32,9 +32,16 @@ const config = {
         { src: "https://res.cloudinary.com/dffcer8gc/image/upload/v1760158161/29.jpg", alt: "Ảnh 29" },
         { src: "https://res.cloudinary.com/dffcer8gc/image/upload/v1760158168/30.jpg", alt: "Ảnh 30" },
         { src: "https://res.cloudinary.com/dffcer8gc/image/upload/v1760158179/31.jpg", alt: "Ảnh 31" },
-        { src: "https://res.cloudinary.com/dffcer8gc/image/upload/v1760158837/33.jpg", alt: "Ảnh 32" },
+        { src: "https://res.cloudinary.com/dffcer8gc/image/upload/v1760158837/33.jpg", alt: "Ảnh 33" },
+        { src: "https://res.cloudinary.com/dffcer8gc/image/upload/v1760158837/34.jpg", alt: "Ảnh 34" },
+        { src: "https://res.cloudinary.com/dffcer8gc/image/upload/v1760158837/35.jpg", alt: "Ảnh 35" },
+        { src: "https://res.cloudinary.com/dffcer8gc/image/upload/v1760158837/36.jpg", alt: "Ảnh 36" },
+        { src: "https://res.cloudinary.com/dffcer8gc/image/upload/v1760158837/37.jpg", alt: "Ảnh 37" },
+        { src: "https://res.cloudinary.com/dffcer8gc/image/upload/v1760158837/38.jpg", alt: "Ảnh 38" },
+        { src: "https://res.cloudinary.com/dffcer8gc/image/upload/v1760158837/39.jpg", alt: "Ảnh 39" },
+        { src: "https://res.cloudinary.com/dffcer8gc/image/upload/v1760158837/40.jpg", alt: "Ảnh 40" },
         { type: 'video', src: "https://res.cloudinary.com/dffcer8gc/video/upload/v1760158187/31.mp4" }
     ],
     wishWords: "Hếllo 🙌 |Thảo Nhee|Chúc mừng|Sinh nhật|Nhi nha|🎉🎉🎉|Hehehe|#countdown 3|Chúc Nhi |Tuổi mới|Vui vẻ|Luôn luôn|Xinh đẹp|Học giỏi|Luôn luôn| May mắn |❤️|Tuổi mới|nhớ|cố gắng|hơn nữa|nhé|❤️|Zậy là|Anh đã |biết đến|em |được|1 năm rưỡi|rồi đó|Lần đầu|tiên|biết em|là lúc|em cos|Yaoyao đó|🙌|Vừa|nhảy đẹp|học giỏi|lễ phép|dễ thương|nên|trở thành|Fan|lúc nào|không hay| luôn|Mong rằng|em sẽ|luôn|có được|những thứ|tốt đẹp|nhất|🎉|THẢO❤️NHI",
-    bottomMessage: "Anh Tài nek...vậy là đã được <span id=\"span_dt_dt\"></span><br> gặp nhau rùi đấy😘 Nhớ ấn vào ảnh nhé 🥰"
+    bottomMessage: "Anh Tài nek...vậy là đã được <span id=\"span_dt_dt\"></span><br> gặp nhau rùi đấy😘 Nhớ ấn vào ảnh nhé,chị Nọt gửi nhìu ảnh lém đó🥰"
 };
